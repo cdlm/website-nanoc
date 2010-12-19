@@ -1,0 +1,46 @@
+---
+title: Many LaTeX documents, one BibTeX database
+created_at: 2010-01-13
+image: /notes/images/library.jpg
+tags: [latex, bibtex]
+---
+As a researcher, I spend most of my time writing [LaTeX][], using [many][texlive] [tools][latexmkcat], among which [BibTeX][], the bibliography database processor. Our team manages a huge `.bib` file centralizing all publications we read and might need to cite someday.
+
+Since nearly everything we write uses that file, so it gets linked or copied into each the source directory of each new document. Some of us even have a bash alias to automate that copy, but they still have to invoke it for each new paper.
+But…
+
+Zero cost solution:
+: Just put the database somewhere in BibTeX's search path!
+
+[latex]: http://www.latex-project.org/ "LaTeX, a document preparation system"
+[texlive]: http://tug.org/texlive/ "the TeXlive distribution"
+[latexmkcat]: http://texcatalogue.sarovar.org/entries/latexmk.html "Latexmk for automatic compilation"
+[bibtex]: http://www.bibtex.org/
+
+---
+
+*Duh…* Seems obvious, but somehow it took me 10 years of regular LaTeX usage to think of it…
+Anyway, to see where BibTeX will look, run this[^kpse]:
+
+    kpsepath bib
+
+This should display a `$PATH`-like colon-separated list of directory names[^path]. With a standard TeXlive installation, there should be:
+- `.` for BibTeX files that are besides their LaTeX document,
+- then a couple ones starting in `~/.texliveYYYY` which are for caching automatically generated files,
+- then the per-user additions directory we want,
+- and finally some standard distribution-wide places.
+
+By default, the per-user directory is `~/Library/texmf` on Mac and `~/texmf` on Linux; this is where you would install third-party packages, by the way.
+
+In our case, the `///bibtex/bib//` suffix means that BibTeX will look for files anywhere under a `bibtex/bib` directory, itself at any depth under `texmf`.
+So we just need to create `~/Library/texmf/bibtex/bib`, symlink our `foo.bib` files in there.
+
+We can check that all is good:
+
+    $ kpsewhich lse.bib
+    /Users/someone/Library/texmf/bibtex/bib/foo.bib
+
+It finds the newly installed `foo.bib`, so *voilà*, `\bibliography{foo}` now works in any document without further preparation!
+
+[^path]: Compared to the usual unix search paths, there are a couple extensions: `//` means to search subdirectories recursively, and a leading `!!` means to look only in the cached index, never on the disk.
+[^kpse]: The `kpse*` commands are from [Kpathsea](http://www.tug.org/kpathsea/), the library to quickly locate files in the TeXlive hierarchy.

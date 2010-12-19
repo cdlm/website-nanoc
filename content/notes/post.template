@@ -1,0 +1,23 @@
+--- name:content pipeline:blocks,erb,tags,kramdown,head
+
+# {title:}
+
+<%  post = context.node
+    post_tags = context.node['tag nodes'] %>
+<% if post.meta_info.has_key? "image" %>
+  <% image = context.node.resolve(post['image']) %>
+  
+<img alt="<%= image['title'] %>" src="{relocatable: <%= image.alcn %>}" title="<%= image['credits'] %>" class="right" />
+  
+<% end %>
+
+<div class="postmeta">
+  <span class="date"><%= post['created_at'].strftime("%d %b %Y") %></span>
+  <span class="tags"><% unless post_tags.nil? || post_tags.empty? %>
+    in <%= post_tags.collect { |t| t.link_from(context.node) }.join(', ') %>
+  <% end %></span>
+</div>
+
+<webgen:block name="content" />
+
+<webgen:block name="extended" node="first" notfound="ignore" />

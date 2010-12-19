@@ -1,0 +1,62 @@
+---
+title: Playing Tenuki (eponym)
+created_at: 2009-12-06
+image: /notes/images/game-of-go.jpg
+tags: [blog]
+---
+I know, this is yet *another* re-opening-my-blog blog post ;)
+
+I've already maintained a blog before; it was a [Typo][] instance running on a venerable [Sun Ultra 5][ultra5] workstation behind my home DSL. As you can guess, Ruby on a 360MHz CPU is *not* fast, so it was getting painful to edit, and then I moved to Swiss, and the poor server got neglected.
+
+However, I now maintain these static web pages using [Webgen][], which has recently been given blog support by [Matteo Collina][matteo]. Fiddle, hack, tweak, and here's the result.
+
+[typo]: http://blog.typosphere.org/
+[ultra5]: http://en.wikipedia.org/wiki/Ultra_5/10
+[webgen]: http://webgen.rubyforge.org
+[matteo]: http://matteocollina.com/
+
+---
+
+## Why the name?
+
+[Tenuki](http://senseis.xmp.net/?Tenuki) is a term from the [game of Go](http://senseis.xmp.net/?Go) that denotes ignoring the current local battle and just playing somewhere else.
+
+Rather than a blog focused on a particular topic, this will be a repository of short writings on various subjects, probably quite geeky but not necessarily entirely related to research or even computer science; in fact, if I had to gather all that will appear here in a book, I would probably entitle it *The Art of Computer Procrastinating*.
+
+## The spark
+
+Actually [Nicolas][] pointed me to [Sacha Chua][]'s presentation [*The Shy Connector*][shy], where she makes some good points for us introverts. Apparently people will talk to you if they already know that you can help. Who knew ? ;)
+
+So, let these pages be my conversation-with-strangers baits! *Mwa-ha-ha.*
+
+<div style="text-align:center" id="__ss_1879213">
+  <object style="margin:0px" width="425" height="355"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=the-shy-connector-090818212320-phpapp01&rel=0&stripped_title=the-shy-connector" /><param name="allowFullScreen" value="true"/><param name="allowScriptAccess" value="always"/><embed src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=the-shy-connector-090818212320-phpapp01&rel=0&stripped_title=the-shy-connector" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="355"/></object>
+  <div class="light">View more <a href="http://www.slideshare.net/">documents</a> from <a href="http://www.slideshare.net/sachac">Sacha Chua</a>.</div>
+</div>
+
+[nicolas]: http://www.roard.com/seaside/pier/about "His site uses Seaside + Pier, and mine file-based web pages… I make such a *baaad* Smalltalker :D"
+[sacha chua]: http://sachachua.com
+[shy]: http://www.slideshare.net/sachac/the-shy-connector
+
+## What now?
+Below is a quick brain dump of things I could write about ---or already have, but need to dig them up--- when I get myself to it (or someone pushes me enough).
+
+- Typography, graphic design
+
+- LaTeX tips & tricks (setup, workflow, commands, packages)
+
+- unix configuration stuff (svn, seaside with apache/lighttpd ?)
+
+- Go
+
+- Graphics
+
+- Books, Science-fiction, Smalltalk
+
+- Explaining reflection and bootstrap, the neuro-surgeon metaphor
+
+- Misc links like [What To Know Before Debating Type Systems](http://www.pphsg.org/cdsmith/types.html), Dale's [Smalltalk 101](http://gemstonesoup.wordpress.com/smalltalk-101/), Stef's [list of free books](http://stephane.ducasse.free.fr/FreeBooks.html), or [general recommendations](http://mleddy.blogspot.com/2005/01/how-to-e-mail-professor.html)
+
+- Machine naming schemes (eldar, cameo/fallawater, tombolimbes, chepa, tenuki, tsuke, hane, keima, komi, kikashi, kakeme, fuseki)
+
+- *…any suggestion ?*

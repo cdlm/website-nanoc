@@ -1,0 +1,46 @@
+text_extensions: [ 'css', 'erb', 'haml', 'htm', 'html', 'js', 'less', 'markdown', 'md', 'php', 'rb', 'sass', 'scss', 'txt', 'xhtml', 'xml' ]
+
+# output_dir: output
+# enable_output_diff: false
+# index_filenames: [ 'index.html' ]
+
+data_sources:
+  -
+    type: filesystem_unified
+    items_root: /
+    layouts_root: /
+
+deploy:
+  default:
+    dst: 'localhost:/Users/damien/Sites/website-nanoc'
+    options: [ --rsh=ssh, --archive, --delete-after, --verbose, --progress, --compress ]
+  staging:
+    dst: /Users/damien/Sites/website-nanoc
+
+# default and global metadata
+default_info:
+  author: Damien Pollet
+  author_url: http://people.untyped.org/damien.pollet
+  site_lang: en
+  site_title: Damien Pollet
+  site_slogan: >
+    Assistant professor,
+    <a href="http://www.univ-lille1.fr">university of Lille 1, France</a><br/>
+    <em>object-oriented software (re)engineering &amp; language design</em>
+  description: >
+    Website of Damien Pollet, Ph.D
+  keywords: >
+    software engineering,
+    programming languages,
+    reengineering,
+    visualisation,
+    virtual machines,
+    object-oriented
+  menu:
+    - /
+    - /publications/
+    - /research/
+    - /teaching/
+    - /software/
+    - /curriculum/
+    - /contact/

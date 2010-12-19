@@ -1,0 +1,320 @@
+@import animations.css
+@import reset
+
+$body_color: rgb(95, 166, 68)
+$body_alt_color: rgb(72, 142, 69)
+$body_link_color: rgb(29, 61, 53)
+
+$headings_color: rgb(224, 80, 48)
+$link_color: rgb(17, 68, 152)
+
+$banner_color: rgb(222, 239, 209)
+$highlight_color: rgb(255, 255, 160)
+$marker_color: rgb(255, 214, 20)
+
+=rounded
+  border-radius: 0.5em
+  -webkit-border-radius: 0.5em
+  -moz-border-radius: 0.5em
+
+=right
+  clear: right
+  float: right
+  margin-right: -12.5em !important
+  text-align: left
+
+=left
+  clear: left
+  float: left
+  margin-left: -12.5em !important
+  text-align: right
+
+=marker
+  background-color: $marker-color
+  padding: 0.2ex 0.4ex
+  margin: -0.2ex -0.4ex
+  border-radius: 0.5ex
+  -webkit-border-radius: 0.5ex
+  -moz-border-radius: 0.5ex
+
+=inmargin
+  width: 10em
+  margin: 0 2em
+  color: #aaaaaa
+  a
+    color: rgb(144, 175, 200)
+
+.clear
+  clear: both
+  height: 0
+
+.hide
+  display: none
+
+
+html
+  min-height: 100%
+  font-size: 81.25%
+  background-color: $body_color
+  background: -webkit-gradient(linear, left top, 50 400, from(rgb(130,180,80)), to($body_color))
+  background: -moz-linear-gradient(-70deg, rgb(130,180,80), $body_color)
+
+body
+  margin: 1em
+  font-family: "Lato", "Myriad Pro", Calibri, HelveticaNeue, Helvetica, DejaVuSansCondensed, sans-serif
+  line-height: 1.3
+
+a
+  color: $body_link_color
+  text-decoration: none
+  &:hover
+    text-decoration: underline
+    -webkit-animation:
+      name: pulse
+      iteration-count: infinite
+      duration: 0.4s
+      timing-function: linear
+      direction: alternate
+
+#container
+  background-color: $body_alt_color
+  background: -webkit-gradient(linear, left top, 75 600, from($body_color), to($body_alt_color))
+  background: -moz-linear-gradient(-70deg, $body_color, $body_alt_color)
+  max-width: 65em
+  margin: 1em auto
+  padding: 1em 2.5em 1em 2.5em
+  +rounded
+  box-shadow: 0 0 1ex rgb(150, 180, 80)
+  -webkit-box-shadow: 0 0 1ex rgb(150, 180, 80)
+  -moz-box-shadow: 0 0 1ex rgb(150, 180, 80)
+
+#main
+  color: black
+  padding: 2em 14.5em
+  margin: 0 -2em
+  background-color: white
+  +rounded
+  a
+    color: $link_color
+  h1, h2, h3, h4, h5, h6
+    a
+      color: inherit
+  h1, h2, h3, h4
+    color: $headings_color
+    margin: 2ex 0 1ex 0
+  h1
+    font-size: 250%
+    font-weight: lighter
+  h2
+    font-size: 180%
+  h3
+    font-size: 130%
+  h5
+    color: $headings_color
+    font-style: italic
+  h6
+    font-weight: bold
+  h5, h6
+    display: run-in
+    margin: 2ex 1em 1ex 0
+  p, ul, ol, dl
+    margin-bottom: 1ex
+  ul
+    list-style: disc
+  ol
+    list-style: decimal
+  ul, ol
+    padding-left: 2em
+    ol
+      list-style: lower-alpha
+  dl
+    margin-left: 1em
+    dt
+      font-weight: bold
+      margin-left: -1em
+  hr
+    background-color: #666666
+    width: 62%
+    height: 1px
+    border: none
+    margin: 4ex auto
+  address
+    margin: 1ex 0
+  blockquote, pre
+    margin: 1ex 2em
+    padding: 1ex
+  blockquote
+    color: #666666
+  pre
+    background-color: #dddddd
+    overflow-x: auto
+    +rounded
+  sup
+    vertical-align: baseline
+    position: relative
+    font-size: x-small
+    top: -1ex
+  table
+    margin: 1ex auto
+    border-collapse: collapse
+    border-spacing: 0
+    caption-side: top
+    th, td
+      padding: 0.75ex 0.75em
+    thead tr
+      border-bottom: 1px solid #666666
+      vertical-align: bottom
+    tbody
+      vertical-align: top
+  ul.publications
+    li
+      margin-bottom: 1ex
+    a[name]
+      +inmargin
+      +left
+      visibility: hidden
+    .title
+      font-weight: bold
+    .notes
+      display: block
+      margin: .5ex 0
+      color: #666666
+  .highlight, .banner
+    margin: 1em -14.5em 1em -14.5em !important
+    padding: 1ex 14.5em 1ex 14.5em
+    clear: both
+  .highlight
+    background-color: $highlight_color
+    background: -webkit-gradient(linear, left top, right bottom, from(white), color-stop(0.3, $highlight_color), color-stop(0.7, $highlight_color), to(white))
+    background: -moz-linear-gradient(left, white, $highlight_color, $highlight_color, white)
+  .banner
+    background-color: $banner_color
+    background: -webkit-gradient(linear, left top, right bottom, from(white), color-stop(0.3, $banner_color), color-stop(0.7, $banner_color), to(white))
+    background: -moz-linear-gradient(left, white, $banner_color, $banner_color, white)
+  .framed
+    background-color: #aaaaaa
+    padding: 1px
+    border: 1px solid #dddddd
+  .noframe
+    padding: 3px
+  .framed, .noframe
+    margin: 0 0 1em 0
+  .right
+    +right
+  .left
+    +left
+  p.right, p.left
+    +inmargin
+  .postmeta
+    +inmargin
+    +left
+    .date, .tags
+      display: block
+
+img
+  margin: 1ex
+
+a img
+  margin: 0
+
+em
+  font: inherit
+  font-style: italic
+
+strong
+  font-weight: bold
+
+strong.marker
+  +marker
+
+.light
+  font-size: smaller
+  opacity: 0.7
+
+.todo
+  +marker
+  white-space: pre-line
+
+.footnotes, #footnotediv
+  font-size: smaller
+  hr
+    width: 50%
+    margin-left: 0
+  p
+    display: inline
+  a[rev="footnote"]
+    padding-left: 1em
+
+#footnotediv
+  max-width: 20em
+  padding: 1em
+  background-color: white
+  border: 1px solid #cccccc
+  box-shadow: #cccccc 0 0 10px
+  -webkit-box-shadow: #cccccc 0 0 10px
+  -moz-box-shadow: #cccccc 0 0 10px
+  border-radius: 3px
+  -webkit-border-radius: 3px
+  -moz-border-radius: 3px
+
+.permalink
+  margin-top: 1ex
+  margin-right: 1em
+
+#header
+  margin: 0 -1.5em 1ex 0
+  h1
+    float: left
+    font-size: 200%
+    a
+      color: black
+  #tagline
+    float: right
+    text-align: right
+    margin-left: 9ex
+
+#menu
+  margin: 1ex -1ex -1ex -1ex
+  padding: 0
+  float: left
+  ul
+    display: block
+    list-style: none
+    margin: 0
+    padding: 0
+  li
+    display: inline-block
+    margin: 0 1ex 0 0
+  span, a
+    display: inline-block
+    padding: 0.5ex 1ex 1.2ex 1ex
+    margin-bottom: -1ex
+    color: black
+  .active
+    padding-bottom: 0.2ex
+    border-bottom: 1ex solid $headings_color
+    color: white
+
+#langbar
+  margin: 1.5ex 0 -2ex 0
+  float: right
+
+#pagebottom
+  margin: 1em auto
+  font-size: smaller
+  text-align: center
+  opacity: 0.5
+  &:hover
+    opacity: 1
+    -webkit-transition:
+      property: opacity
+      duration: 0.3s
+  #HyphenatorToggleBox
+    display: inline
+
+#header h1
+  -webkit-animation:
+    name: slide-in
+    duration: 0.5s
+    timing-function: ease
+

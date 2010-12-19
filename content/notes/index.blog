@@ -1,0 +1,62 @@
+---
+title: Playing Tenuki
+routed_title: Notes
+blog.filter: /notes/[0-9][0-9][0-9][0-9]/**/*.html
+blog.post_per_page: 5
+blog.languages: en
+link:
+   alternate:
+      - type: application/atom+xml
+        href: /notes/feed.atom
+        title: Posts (Atom)
+      - type: application/rss+xml
+        href: /notes/feed.rss
+        title: Posts (RSS)
+---
+<% posts = context.node['posts'] %>
+
+<% if context.node['tag'].nil? %>
+# {title:}
+<% else %>
+Listing only posts with tag **{title:}** — [see all posts…](./index.html)
+{: .highlight}
+<% end %>
+
+
+<% unless posts.first? %>
+  <p class="left"><%= context.node.link_to(posts.prev_node, :link_text => "Newer posts", "accesskey" => "j") %></p>
+<% end %>
+
+<% posts.each do |post|
+    post_page = post.node_info[:page]
+    post_tags = post['tag nodes'] %>
+
+## <%= context.node.link_to(post) %>
+
+<div class="postmeta">
+  <span class="date"><%= post['created_at'].strftime("%d %b %Y") %></span>
+  <span class="tags"><% unless post_tags.nil? || post_tags.empty? %>
+    in <%= post_tags.collect { |t| t.link_from(context.node) }.join(', ') %>
+  <% end %></span>
+</div>
+
+<%= post_page.blocks["content"].content %>
+
+<%= if post_page.blocks.has_key? "extended"
+    then context.node.link_to(post, :link_text => "Read more…", 'class' => "permalink")
+    end %>
+<% end %>
+
+<% unless posts.last? %>
+  <p class="left"><%= context.node.link_to(posts.next_node, :link_text => "Older posts", "accesskey" => "k") %></p>
+<% end %>
+
+
+
+<% if posts.first? and context.node['tag'].nil? %>
+###### Why the name?
+[Tenuki](http://senseis.xmp.net/?Tenuki) is a term from the [game of Go](http://senseis.xmp.net/?Go) that denotes ignoring the current local battle and just playing somewhere else.
+So these pages will be like a blog or a repository of short writings on various subjects, probably quite geeky but not necessarily entirely related to research or even computer science; in fact, if I had to gather all that will appear here in a book, I would probably entitle it *The Art of Computer Procrastinating*.
+{: .banner}
+
+<% end %>
