@@ -1,6 +1,5 @@
 ---
 title: Contact
-sort_info: 11
 ---
 <%= render '_links' %>
 

@@ -1,12 +1,11 @@
 ---
 title: Home
-sort_info: 1
 ---
 <%= render '_links' %>
-[![Logo USTL]({relocatable: /images/ustl-128.jpg}){: .noframe}][ustl]
-[![Logo Telecom]({relocatable: /images/telecom-128.png}){: .noframe}][telecom]
-[![Logo Inria]({relocatable: /images/inria-128.png}){: .noframe}][inria]
-[![Pharo by Example cover]({relocatable: /images/pbe-128.jpg}){: .framed}][pbe]
+[![Logo USTL](/images/ustl-128.jpg){: .noframe}][ustl]
+[![Logo Telecom](/images/telecom-128.png){: .noframe}][telecom]
+[![Logo Inria](/images/inria-128.png){: .noframe}][inria]
+[![Pharo by Example cover](/images/pbe-128.jpg){: .framed}][pbe]
 {: .right}
 
 <p class='left'>

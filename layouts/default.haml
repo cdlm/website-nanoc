@@ -53,7 +53,7 @@
         #menu<
           %ul
             - menu_items.each do |i|
-              %li= link_to_unless_current i[:title], i
+              %li= menu_link i
         -#langbar {langbar:}
         != @clear
       

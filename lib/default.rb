@@ -24,3 +24,8 @@ def menu_items
     items.find { |any| any.identifier == each }
   end
 end
+
+def menu_link(item)
+  title = item[:menu_title] || item[:title]
+  link_to_unless_current title, item
+end

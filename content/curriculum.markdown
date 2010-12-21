@@ -1,8 +1,8 @@
 ---
-title: CV
-sort_info: 10
+title: Curriculum Vitae
+menu_title: CV
 ---
-# Curriculum
+# <%= @item[:title] %>
 
 ###### Work in progress!
 I'm still in the process of writing these pages.

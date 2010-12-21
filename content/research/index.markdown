@@ -1,10 +1,10 @@
 ---
 title: Research Activities
-routed_title: Research
+menu_title: Research
 ---
 <%= render '_links' %>
 
-# {title:}
+# <%= @item[:title] %>
 
 
 ## Research Area

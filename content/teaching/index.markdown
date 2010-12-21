@@ -2,10 +2,10 @@
 title: Teaching
 ---
 <%= render '_links' %>
-[![Logo Telecom]({relocatable: /images/telecom-128.png}){: .noframe}][telecom]
+[![Logo Telecom](/images/telecom-128.png){: .noframe}][telecom]
 {: .right}
 
-# {title:}
+# <%= @item[:title] %>
 
 I'm part of the computer science department of [Telecom Lille 1][telecom], where I teach programming and software engineering.
 

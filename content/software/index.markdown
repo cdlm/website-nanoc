@@ -1,9 +1,10 @@
 ---
 title: Software Projects
-routed_title: Software
+menu_title: Software
 ---
-{include_file: src/links.markdown}
-# {title:}
+<%= render '_links' %>
+
+# <%= @item[:title] %>
 
 
 ## Research Platforms
