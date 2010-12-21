@@ -9,5 +9,5 @@ end
 
 desc "Start the nanoc autocompiler."
 task :auto do
-  system 'nanoc autocompile > nanoc-autocompile.log 2>&1'
+  system 'nanoc autocompile --handler thin > nanoc-autocompile.log 2>&1'
 end
