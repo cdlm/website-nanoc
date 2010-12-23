@@ -1,44 +1,20 @@
 - @clear = '<div class="clear">&nbsp;</div'
-!!! XML 1.1
+!!! 1.1
 !!!
-%html{:xmlns => "http://www.w3.org/1999/xhtml", :'xml:lang' => "#{info :site_lang}", :lang => "#{info :site_lang}"}
+%html{:xmlns => "http://www.w3.org/1999/xhtml", :'xml:lang' => info(:site_lang), :lang => info(:site_lang)}
   %head
     %meta{:'http-equiv' => "content-type", :content => "text/html; charset=utf-8"}
-    %meta{:name => "author", :content => "#{info :author}"}
-    %meta{:name => "description", :content => "#{info :description}"}
-    %meta{:name => "keywords", :content => "#{info :keywords}"}
+    %meta{:name => "author", :content => info(:author)}
+    %meta{:name => "description", :content => info(:description)}
+    %meta{:name => "keywords", :content => info(:keywords)}
     %meta{:name => "generator", :content => "webgen — http://webgen.rubyforge.org"}
+    %link{:rel => "icon", :type => "image/png", :href => "/images/icon.png"}
     %link{:rel => "stylesheet", :type => "text/css", :href => "/stylesheets/screen.css", :media => "screen,projection"}
     -# %link{:rel => "stylesheet", :type => "text/css", :href => "/stylesheets/print.css", :media => "print"}
-    %link{:rel => "icon", :type => "image/png", :href => "/images/icon.png"}
-    
+      
     %title= "#{info :site_title} — #{@item[:title]}"
-  
-    %script{:type => "text/javascript", :src => "/scripts/hyphenator-packed.js"}/
-    %script{:type => "text/javascript", :src => "/scripts/jquery-1.4.3.min.js"}/
-    %script{:type => "text/javascript", :src => "/scripts/footnotes.js"}/
-    %script{:type => "text/javascript", :src => "/scripts/konami.pack.js"}<
-      :cdata
-        var k = new Konami();
-        k.code = function() {
-          document.getElementById("konami").style.display = "inline";
-          var cssLink = document.createElement("link");
-          cssLink.href = "{relocatable: /stylesheets/konami.css}";
-          cssLink.rel = "stylesheet";
-          cssLink.type = "text/css";
-          document.body.appendChild(cssLink);
-        };
-        k.load();
-    %script{:type => "text/javascript", :src => "/scripts/MathJax/MathJax.js"}<
-      :cdata
-        MathJax.OutputJax.fontDir = "http://github-assets.s3.amazonaws.com/javascripts/MathJax/fonts";
-        MathJax.Hub.Config({
-          jax: ["input/TeX", "output/HTML-CSS"],
-          "HTML-CSS": { availableFonts:["TeX"] },
-          extensions: ["jsMath2jax.js","TeX/noErrors.js"],
-          tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] }
-        });
     
+  
   %body
     #pagetop.hide
       %p Skip to: <a href="#menu" accesskey="2">Site menu</a> | <a href="#main" accesskey="3">Main content</a>
@@ -65,14 +41,45 @@
     #pagebottom
       = render "footer"
       %a.hide{:href => "#pagetop", :accesskey => "1"} Back to top
-      
+    
+    %script{:type => "text/javascript", :src => "/scripts/jquery.js"}
+    %script{:type => "text/javascript", :src => "/scripts/footnotes.js"}
+    %script{:type => "text/javascript", :src => "/scripts/hyphenator.js"}
+    :javascript
+      $('#HyphenatorToggleBox').click(
+        function() {
+          Hyphenator.toggleHyphenation();
+          if (Hyphenator.doHyphenation) {
+            $('#HyphenatorToggleBox').text('hy-phe-na-ti-on');
+          } else {
+            $('#HyphenatorToggleBox').text('hyphenation');
+          }
+        });
+      Hyphenator.config({hyphenchar: '&shy;'});
+      Hyphenator.run();
+    %script{:type => "text/javascript", :src => "/scripts/MathJax/MathJax.js"}
+    :javascript
+      MathJax.OutputJax.fontDir = "http://github-assets.s3.amazonaws.com/javascripts/MathJax/fonts";
+      MathJax.Hub.Config({
+        jax: ["input/TeX", "output/HTML-CSS"],
+        "HTML-CSS": { availableFonts:["TeX"] },
+        extensions: ["jsMath2jax.js","TeX/noErrors.js"],
+        tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] }
+      });
+    %script{:type => "text/javascript", :src => "/scripts/konami.js"}
+    :javascript
+      var k = new Konami();
+      k.code = function() {
+        document.getElementById("konami").style.display = "inline";
+        var cssLink = document.createElement("link");
+        cssLink.href = "{relocatable: /stylesheets/konami.css}";
+        cssLink.rel = "stylesheet";
+        cssLink.type = "text/css";
+        document.body.appendChild(cssLink);
+      };
+      k.load();
     :javascript
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-718463-2']);
       _gaq.push(['_trackPageview']);
-      (function() {
-        var ga = document.createElement('script');
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        ga.setAttribute('async', 'true');
-        document.documentElement.firstChild.appendChild(ga);
-      })();
+      head.js(('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js');
