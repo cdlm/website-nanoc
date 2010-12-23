@@ -20,7 +20,7 @@ end
 
 # Menu generation
 def menu_items
-  info(:menu).collect do |each|
+  info(:site_menu).collect do |each|
     items.find { |any| any.identifier == each }
   end
 end
