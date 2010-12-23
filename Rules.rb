@@ -5,6 +5,8 @@ compile /\/_/ do end
 
 compile '*' do
   case item[:extension]
+  when 'js'
+    filter :closure_compiler
   when 'sass'
     filter :sass, :style => :compact
     filter :relativize_paths, :type => :css
