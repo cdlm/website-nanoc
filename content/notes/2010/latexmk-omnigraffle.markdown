@@ -4,6 +4,7 @@ created_at: 2010-01-24
 image: /notes/images/letterpress.jpg
 tags: [latex]
 ---
+<% content_for :summary do %>
 Compiling LaTeX documents can be quite a hassle, because it's an iterative process, and the dependancies are not really clear.
 There is one gem of a tool, however, that any regular LaTeXer should know: [Latexmk][].
 
@@ -15,8 +16,8 @@ Very nice indeed, but what about figures created in an external editor like [Omn
 
 [latexmk]: http://www.phys.psu.edu/~collins/software/latexmk-jcc/ "Latexmk's home page"
 [omnigraffle]: http://www.omnigroup.com/applications/OmniGraffle/ "OmniGroup's diagramming application"
+<% end %>
 
----
 
 ## Exporting from OmniGraffle automatically
 

@@ -4,6 +4,7 @@ created_at: 2010-04-17
 image: /notes/images/keyboard.jpg
 tags: [usability, hack]
 ---
+<% content_for :summary do %>
 Like many programmers whose main language is not English, I've been facing the keyboard dilemma for a while:
 keep my native layout even though frequent programming characters like `[]{}|\` require 2 or 3 fingers, or adopt the standard US Qwerty layout?
 
@@ -13,7 +14,8 @@ So, I made a [layout][] to fix that, plus a couple itches I had with the basic Q
 
 [esperanto]: http://en.wikipedia.org/wiki/Esperanto
 [layout]: http://github.com/cdlm/infrastructure/blob/master/mac/Accented%20QWERTY.keylayout
----
+<% end %>
+
 
 ## Rollover & Overstriking
 

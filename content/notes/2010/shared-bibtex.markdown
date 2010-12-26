@@ -4,6 +4,7 @@ created_at: 2010-01-13
 image: /notes/images/library.jpg
 tags: [latex, bibtex]
 ---
+<% content_for :summary do %>
 As a researcher, I spend most of my time writing [LaTeX][], using [many][texlive] [tools][latexmkcat], among which [BibTeX][], the bibliography database processor. Our team manages a huge `.bib` file centralizing all publications we read and might need to cite someday.
 
 Since nearly everything we write uses that file, so it gets linked or copied into each the source directory of each new document. Some of us even have a bash alias to automate that copy, but they still have to invoke it for each new paper.
@@ -16,8 +17,8 @@ Zero cost solution:
 [texlive]: http://tug.org/texlive/ "the TeXlive distribution"
 [latexmkcat]: http://texcatalogue.sarovar.org/entries/latexmk.html "Latexmk for automatic compilation"
 [bibtex]: http://www.bibtex.org/
+<% end %>
 
----
 
 *Duh…* Seems obvious, but somehow it took me 10 years of regular LaTeX usage to think of it…
 Anyway, to see where BibTeX will look, run this[^kpse]:
@@ -25,6 +26,7 @@ Anyway, to see where BibTeX will look, run this[^kpse]:
     kpsepath bib
 
 This should display a `$PATH`-like colon-separated list of directory names[^path]. With a standard TeXlive installation, there should be:
+
 - `.` for BibTeX files that are besides their LaTeX document,
 - then a couple ones starting in `~/.texliveYYYY` which are for caching automatically generated files,
 - then the per-user additions directory we want,
