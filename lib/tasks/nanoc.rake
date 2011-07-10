@@ -1,6 +1,7 @@
 require 'rake'
 require 'rake/clean'
-CLEAN.include("#{OUT}/**", 'tmp', '.sass-cache')
+CLEAN.include('tmp', '.sass-cache')
+CLOBBER.include("#{OUT}/**")
 
 namespace :nanoc do
   
