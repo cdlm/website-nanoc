@@ -1,0 +1,12 @@
+<script type="text/javascript">
+  var k = new Konami();
+  k.code = function() {
+    document.getElementById("konami").style.display = "inline";
+    var cssLink = document.createElement("link");
+    cssLink.href = "<%= relative_path_to '/stylesheets/konami.css' %>";
+    cssLink.rel = "stylesheet";
+    cssLink.type = "text/css";
+    document.body.appendChild(cssLink);
+  };
+  k.load();
+</script>

@@ -24,6 +24,7 @@
 [Flickr]: http://www.flickr.com/photos/damienpollet
 [Fotopedia]: http://fotopedia.com/users/damienpollet
 [GitHub]: http://www.github.com/cdlm
+[Google+]: https://plus.google.com/107029109572027512292
 [LastFM]: http://www.last.fm/user/cDlm
 [LinkedIn]: http://www.linkedin.com/in/damienpollet
 [Slideshare]: http://www.slideshare.net/damien.pollet

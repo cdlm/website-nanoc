@@ -28,6 +28,7 @@ I received an engineering degree in computer science from [Insa][] in 2001, and 
 
 ----
 
+<%#
 {ticker:: {path: news.html, more: Older news…}}
 ## News
 {ticker}
@@ -35,7 +36,7 @@ I received an engineering degree in computer science from [Insa][] in 2001, and 
 {ticker:: {path: news.html, number: ~, period: :upcoming}}
 ## Upcoming
 {ticker}
-
+%>
 
 ###### Software evolves!
 Therefore, be warned that these pages are never complete, but be assured that they are under constant refactoring and evolution… for some definition of *constant*.
@@ -47,8 +48,8 @@ Therefore, be warned that these pages are never complete, but be assured that th
 See my [detailed contact page](contact.html) for more info, the [access map](contact.html#map) to our offices, and my [agenda](contact.html#agenda).
 
 Email
-: research: {mailto: damien.pollet@inria.fr}
-: teaching: {mailto: damien.pollet@telecom-lille1.eu}
+: research: <%= mailto 'damien.pollet@inria.fr', 'Enquiry (from untyped.org)' %>
+: teaching: <%= mailto 'damien.pollet@telecom-lille1.eu', 'Enquiry (from untyped.org)' %>
 
 Office
 : at Lifl: M3&nbsp;117 --- +33&nbsp;3&nbsp;20&nbsp;43&nbsp;40&nbsp;01
@@ -69,8 +70,10 @@ Web
 : [GitHub][]
   – [Slideshare][]
   – [LinkedIn][]
-  - [Viadeo][]
+  – [Viadeo][]
 : [Flickr][]
   – [Fotopedia][]
   – [Facebook][]
+  – [Google+][]
   – [Last FM][lastfm]
+

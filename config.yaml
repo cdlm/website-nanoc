@@ -1,6 +1,7 @@
 text_extensions: [ 'css', 'erb', 'haml', 'htm', 'html', 'js', 'less', 'markdown', 'md', 'php', 'rb', 'sass', 'scss', 'txt', 'xhtml', 'xml' ]
 
 # output_dir: output
+output_dir: /Users/damien/Sites/nanoc
 # enable_output_diff: false
 # index_filenames: [ 'index.html' ]
 
@@ -17,10 +18,14 @@ deploy:
   staging:
     dst: /Users/damien/Sites/website-nanoc
 
+tag_base_url: /notes/tags/
+#http://people.untyped.org/damien.pollet
+
 # default and global metadata
 default_info:
   author: Damien Pollet
   author_url: http://people.untyped.org/damien.pollet
+  analytics: 'UA-718463-2'
   site_lang: en
   site_title: Damien Pollet
   site_slogan: >
@@ -44,3 +49,4 @@ default_info:
     - /software/
     - /curriculum/
     - /contact/
+    - /notes/

@@ -1,0 +1,8 @@
+---
+---
+%h1
+  = "Articles tagged with '#{tag}'"
+
+.tag-page
+  - items_with_tag(tag).each do |item|
+    = render('_excerpt', :item => item) 

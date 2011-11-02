@@ -1,8 +1,32 @@
-layout 'default', :haml
-layout '*', :erb
+layout '_*', :erb
+layout '*', :haml
 
-compile /\/_/ do end
+# do not generate partials, Sass includes, etc
+compile %r{/_} do end
+route %r{/_} do  nil  end
 
+# blog articles
+preprocess do
+  
+end
+
+compile %r{/notes/\d\d\d\d/.*/} do
+  case item[:extension]
+  when 'html', 'markdown'
+    filter :erb
+    layout 'article'
+    filter :kramdown
+    layout 'default'
+    filter :rubypants
+    filter :relativize_paths, :type => :html
+  end
+end
+
+route '/notes/' do
+  item.identifier + 'index.html'
+end
+
+# default pipeline & routing
 compile '*' do
   case item[:extension]
   when 'js'
@@ -19,9 +43,6 @@ compile '*' do
   end
 end
 
-route /\/_/ do # do not generate partials, Sass includes, etc
-  nil
-end
 
 route '*' do
   case item[:extension]
