@@ -26,8 +26,8 @@ end
 
 # Menu generation
 def menu_items
-  info(:site_menu).collect do |each|
-    items.find { |any| any.identifier == each }
+  info(:site_menu).collect do |id|
+    item_named(id)
   end
 end
 
@@ -36,8 +36,7 @@ def menu_link(item)
   ancestor_link_unless_current title, item
 end
 
-def ancestor_link_unless_current(title, item)
-  destination = item.as_item
+def ancestor_link_unless_current(title, destination)
   attributes = {}
   if not destination.is_root? and destination.ancestor_of? @item
     attributes.update :class => 'active'
@@ -56,14 +55,16 @@ def ancestor_link_unless_current(title, item)
   result << ">#{title}</#{elt}>"
 end
 
+def item_named(id)
+  items.find { |i| i.identifier == id }
+end
+
+def items_by_identifier(pattern)
+  items.select { |i| pattern === i.identifier }
+end
+
 # Core extensions
 class Nanoc3::Item
-  class << self
-    def by_identifier(id)  @items.find { |i| i.identifier == id }  end
-    def by_path(p) # probable bug: reps have paths, not items 
-      @items.find { |i| i.path == p }  end
-  end
-  def as_item()  return self  end
   def ancestor_of?(item)
     return false if item.nil?
     return true if item == self
@@ -72,9 +73,6 @@ class Nanoc3::Item
     ancestor_of?(item.parent)
   end
   def is_root?()  self.identifier == '/'  end
-end
-class String
-  def as_item()  return Nanoc3::Item.by_identifier self  end
 end
 
 # patch colors for solarized shinyness
