@@ -1,4 +1,4 @@
-layout '_*', :erb
+layout %r{/_}, :erb
 layout '*', :haml
 
 # do not generate partials, Sass includes, etc
@@ -29,7 +29,7 @@ end
 # default pipeline & routing
 compile '*' do
   case item[:extension]
-  when 'js'
+  when /(.+\.)?js/
     filter :closure_compiler
   when 'sass'
     filter :sass, :style => :compact

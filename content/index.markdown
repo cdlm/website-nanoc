@@ -8,9 +8,11 @@ title: Home
 [![Pharo by Example cover](/images/pbe-128.jpg){: .framed}][pbe]
 {: .right}
 
-<p class='left'>
-  {randomimg: {dir: /images/faces, attrs: {alt: Random portrait, width: 128, className: noframe, id: portrait}}}
-</p>
+<% render "slidesjs/_slideshow_bare", :style => 'width:128px;height:128px;', :class => 'left noframe' do %>
+  <% items_by_identifier(%r{/images/faces/.*}).each do |i| %>
+    <img class='slide' src="<%= relative_path_to i %>" title="<%= i[:title] %>" alt="Random portrait" width="128"/>
+  <% end %>
+<% end %>
 
 I am assistant professor (*Maître de conférences*) at the [university of Lille 1][ustl] ([UFR IEEA][ieea]) since september 2008.
 

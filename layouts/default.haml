@@ -60,16 +60,9 @@
           useCSS3hyphenation : true
       });
       Hyphenator.run();
-    %script{:type => "text/javascript", :src => "/scripts/MathJax/MathJax.js"}
-    :javascript
-      MathJax.OutputJax.fontDir = "http://github-assets.s3.amazonaws.com/javascripts/MathJax/fonts";
-      MathJax.Hub.Config({
-        jax: ["input/TeX", "output/HTML-CSS"],
-        "HTML-CSS": { availableFonts:["TeX"] },
-        extensions: ["jsMath2jax.js","TeX/noErrors.js"],
-        tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] }
-      });
+    -# render "_mathjax"
+    = render "slidesjs/_setup"
     -# %script{:type => "text/javascript", :src => "/scripts/konami.js"}
     -# = render "_konami"
-    = render "_google_analytics"
+    -# = render "_google_analytics"
 
