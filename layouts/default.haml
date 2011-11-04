@@ -9,16 +9,17 @@
     %meta{:name => "generator", :content => "nanoc — http://nanoc.stoneship.org"}
     %link{:rel => "icon", :type => "image/png", :href => "/images/icon.png"}
     %link{:rel => "stylesheet", :type => "text/css", :href => "/stylesheets/screen.css", :media => "screen,projection"}
+    %link{:rel => "stylesheet", :type => "text/css", :href => "/stylesheets/animations.css", :media => "screen,projection"}
     -# %link{:rel => "stylesheet", :type => "text/css", :href => "/stylesheets/print.css", :media => "print"}
-      
+
     %title= "#{info :site_title} — #{@item[:title]}"
-    
+
     = head_content
-    
+
   %body
     #pagetop.hide
       %p Skip to: <a href="#menu" accesskey="2">Site menu</a> | <a href="#main" accesskey="3">Main content</a>
-    
+
     #container
       #header
         %h1<
@@ -32,16 +33,16 @@
               %li= menu_link i
         -#langbar {langbar:}
         = clear
-      
+
       #main.hyphenate
         = yield
         = clear
       = clear
-    
+
     #pagebottom
       = render "_footer"
       %a.hide{:href => "#pagetop", :accesskey => "1"} Back to top
-    
+
     %script{:type => "text/javascript", :src => "http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"}
     %script{:type => "text/javascript", :src => "/scripts/footnotes.js"}
     %script{:type => "text/javascript", :src => "/scripts/hyphenator.js"}

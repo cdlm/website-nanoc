@@ -41,7 +41,7 @@ I received an engineering degree in computer science from [Insa][] in 2001, and 
 %>
 
 ###### Software evolves!
-Therefore, be warned that these pages are never complete, but be assured that they are under constant refactoring and evolution… for some definition of *constant*.
+Therefore, these pages are never complete, and always under constant refactoring and evolution… for some definition of *constant*.
 {: .banner}
 
 
