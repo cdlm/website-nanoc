@@ -1,7 +1,7 @@
 ---
 title: Teaching
 ---
-<%= render 'markdown_links' %>
+<%= render 'partials/markdown_links' %>
 [![Logo Telecom](/images/telecom-128.png){: .noframe}][telecom]
 {: .right}
 
@@ -9,7 +9,7 @@ title: Teaching
 
 I'm part of the computer science department of [Telecom Lille 1][telecom], where I teach programming and software engineering.
 
-Most slides and other teaching materials in french.
+Most slides and other teaching materials are in french.
 {: .highlight}
 
 

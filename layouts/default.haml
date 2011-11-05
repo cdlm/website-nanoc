@@ -40,30 +40,14 @@
       = clear
 
     #pagebottom
-      = render "_footer"
+      = render "partials/footer"
       %a.hide{:href => "#pagetop", :accesskey => "1"} Back to top
 
     %script{:type => "text/javascript", :src => "http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"}
     %script{:type => "text/javascript", :src => "/scripts/footnotes.js"}
-    %script{:type => "text/javascript", :src => "/scripts/hyphenator.js"}
-    :javascript
-      $('#HyphenatorToggleBox').click(
-        function() {
-          Hyphenator.toggleHyphenation();
-          if (Hyphenator.doHyphenation) {
-            $('#HyphenatorToggleBox').text('hy-phe-na-ti-on');
-          } else {
-            $('#HyphenatorToggleBox').text('hyphenation');
-          }
-        });
-      Hyphenator.config({
-          persistentconfig : true,
-          useCSS3hyphenation : true
-      });
-      Hyphenator.run();
-    -# render "_mathjax"
-    = render "slidesjs/_setup"
-    -# %script{:type => "text/javascript", :src => "/scripts/konami.js"}
-    -# = render "_konami"
-    -# = render "_google_analytics"
+    = render "slidesjs/setup"
+    = render "setup/hyphenator"
+    -# render "setup/mathjax"
+    -# = render "setup/konami"
+    -# = render "setup/google_analytics"
 

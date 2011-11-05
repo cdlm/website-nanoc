@@ -1,37 +1,11 @@
 ---
 title: Contact
 ---
-<%= render 'markdown_links' %>
+<%= render 'partials/markdown_links' %>
 
 # Contact Info
 
-Email
-: research: {mailto: damien.pollet@inria.fr}
-: teaching: {mailto: damien.pollet@telecom-lille1.eu}
-
-Office
-: at Lifl: M3&nbsp;117 --- +33&nbsp;3&nbsp;20&nbsp;43&nbsp;40&nbsp;01
-: at Telecom: D&nbsp;109&nbsp;S
-: <address>
-    Lifl, bâtiment M3<br/>
-    Université Lille 1 Sciences et Technologies<br/>
-    Cité Scientifique<br/>
-    59655 Villeneuve d'Ascq cedex — France
-  </address>
-
-
-Web
-: [ACM](http://portal.acm.org/author_page.cfm?id=81100098681 "Association for Computing Machinery")
-  – [DBLP](http://www.informatik.uni-trier.de/~ley/db/indices/a-tree/p/Pollet:Damien.html)
-  – [ScientificCommons](http://en.scientificcommons.org/damien_pollet)
-  – [Google Scholar](http://scholar.google.com/scholar?q=damien%20pollet)
-  – [citeulike](http://www.citeulike.org/user/dpollet)
-: [Flickr][]
-  – [Fotopedia][]
-  – [Slideshare][]
-  – [LinkedIn][]
-  – [Facebook][]
-  – [Last FM][lastfm]
+<%= render 'partials/contact_info' %>
 
 
 ###### We are NOT in the Inria building!      {#map}
@@ -58,4 +32,4 @@ RMoD Assistant/Secretary
 
 # Agenda
 
-<div style="margin:0 -12.5em"><iframe src="http://www.google.com/calendar/embed?showTitle=0&amp;mode=WEEK&amp;height=600&amp;wkst=2&amp;bgcolor=%23ffffff&amp;src=damien.pollet%40gmail.com&amp;color=%23A32929&amp;ctz=Europe%2FParis" style="border-width:0" width="100%" height="600" frameborder="0" scrolling="no"></iframe></div>
+<div style="margin:0 -12.5em"><iframe src="http://www.google.com/calendar/embed?showTitle=0&amp;mode=MONTH&amp;height=600&amp;wkst=2&amp;bgcolor=%23ffffff&amp;src=damien.pollet%40gmail.com&amp;color=%23A32929&amp;ctz=Europe%2FParis" style="border-width:0" width="100%" height="600" frameborder="0" scrolling="no"></iframe></div>

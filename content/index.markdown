@@ -1,14 +1,14 @@
 ---
 title: Home
 ---
-<%= render 'markdown_links' %>
+<%= render 'partials/markdown_links' %>
 [![Logo USTL](/images/ustl-128.jpg){: .noframe}][ustl]
 [![Logo Telecom](/images/telecom-128.png){: .noframe}][telecom]
 [![Logo Inria](/images/inria-128.png){: .noframe}][inria]
 [![Pharo by Example cover](/images/pbe-128.jpg){: .framed}][pbe]
 {: .right}
 
-<% render "slidesjs/_slideshow_bare", :style => 'width:128px;height:128px;', :class => 'left noframe' do %>
+<% render "slidesjs/slideshow_bare", :style => 'width:128px;height:128px;', :class => 'left noframe' do %>
   <% items_by_identifier(%r{/images/faces/.*}).each do |i| %>
     <img class='slide' src="<%= relative_path_to i %>" title="<%= i[:title] %>" alt="Random portrait" width="128"/>
   <% end %>
@@ -45,37 +45,9 @@ Therefore, these pages are never complete, and always under constant refactoring
 {: .banner}
 
 
-## Contact Info
+## [Contact Info](contact.html)
 
 See my [detailed contact page](contact.html) for more info, the [access map](contact.html#map) to our offices, and my [agenda](contact.html#agenda).
 
-Email
-: research: <%= mailto 'damien.pollet@inria.fr', 'Enquiry (from untyped.org)' %>
-: teaching: <%= mailto 'damien.pollet@telecom-lille1.eu', 'Enquiry (from untyped.org)' %>
-
-Office
-: at Lifl: M3&nbsp;117 --- +33&nbsp;3&nbsp;20&nbsp;43&nbsp;40&nbsp;01
-: at Telecom: D&nbsp;109&nbsp;S
-: <address>
-    Lifl, bâtiment M3<br/>
-    Université Lille 1 Sciences et Technologies<br/>
-    Cité Scientifique<br/>
-    59655 Villeneuve d'Ascq cedex — France
-  </address>
-
-Web
-: [ACM](http://portal.acm.org/author_page.cfm?id=81100098681 "Association for Computing Machinery")
-  – [DBLP](http://www.informatik.uni-trier.de/~ley/db/indices/a-tree/p/Pollet:Damien.html)
-  – [ScientificCommons](http://en.scientificcommons.org/damien_pollet)
-  – [Google Scholar](http://scholar.google.com/scholar?q=damien%20pollet)
-  – [citeulike](http://www.citeulike.org/user/dpollet)
-: [GitHub][]
-  – [Slideshare][]
-  – [LinkedIn][]
-  – [Viadeo][]
-: [Flickr][]
-  – [Fotopedia][]
-  – [Facebook][]
-  – [Google+][]
-  – [Last FM][lastfm]
+<%= render 'partials/contact_info' %>
 

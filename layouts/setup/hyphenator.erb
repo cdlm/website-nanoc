@@ -1,0 +1,17 @@
+<script type="text/javascript" src="/scripts/hyphenator.js"></script>
+<script type="text/javascript">
+  $('#HyphenatorToggleBox').click(
+    function() {
+      Hyphenator.toggleHyphenation();
+      if (Hyphenator.doHyphenation) {
+        $('#HyphenatorToggleBox').text('hy-phe-na-ti-on');
+      } else {
+        $('#HyphenatorToggleBox').text('hyphenation');
+      }
+    });
+  Hyphenator.config({
+      persistentconfig : true,
+      useCSS3hyphenation : true
+  });
+  Hyphenator.run();
+</script>
