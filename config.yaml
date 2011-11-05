@@ -42,7 +42,6 @@ default_info:
     virtual machines,
     object-oriented
   site_menu:
-    - /
     - /publications/
     - /research/
     - /teaching/
@@ -50,3 +49,4 @@ default_info:
     - /curriculum/
     - /contact/
     - /notes/
+
