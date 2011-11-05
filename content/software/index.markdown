@@ -2,7 +2,7 @@
 title: Software Projects
 menu_title: Software
 ---
-<%= render '_links' %>
+<%= render 'markdown_links' %>
 
 # <%= @item[:title] %>
 

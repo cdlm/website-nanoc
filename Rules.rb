@@ -1,5 +1,4 @@
-layout %r{/_}, :erb
-layout '*', :haml
+layout '*', :by_extension
 
 # do not generate partials, Sass includes, etc
 compile %r{/_} do end

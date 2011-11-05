@@ -1,7 +1,7 @@
 ---
 title: Teaching
 ---
-<%= render '_links' %>
+<%= render 'markdown_links' %>
 [![Logo Telecom](/images/telecom-128.png){: .noframe}][telecom]
 {: .right}
 

@@ -1,7 +1,7 @@
 ---
 title: Home
 ---
-<%= render '_links' %>
+<%= render 'markdown_links' %>
 [![Logo USTL](/images/ustl-128.jpg){: .noframe}][ustl]
 [![Logo Telecom](/images/telecom-128.png){: .noframe}][telecom]
 [![Logo Inria](/images/inria-128.png){: .noframe}][inria]

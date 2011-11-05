@@ -2,7 +2,7 @@
 title: Research Activities
 menu_title: Research
 ---
-<%= render '_links' %>
+<%= render 'markdown_links' %>
 
 # <%= @item[:title] %>
 

@@ -1,7 +1,7 @@
 ---
 title: Contact
 ---
-<%= render '_links' %>
+<%= render 'markdown_links' %>
 
 # Contact Info
 
