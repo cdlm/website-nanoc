@@ -1,13 +1,21 @@
 layout '*', :by_extension
 
 # do not generate partials, Sass includes, etc
-compile %r{/_} do end
-route %r{/_} do  nil  end
+compile %r{/(_|README)} do end
+route %r{/(_|README)} do  nil  end
 
 # blog articles
 preprocess do
   
 end
+
+compile '/publications/DamienPollet/', :rep => :html do
+  filter :external,
+    :cmd => "bibhtmlize/bibhtmlize #{item[:content_filename]}",
+    :pipe_content => false 
+end
+
+route '/publications/DamienPollet/', :rep => :html do  nil  end
 
 compile %r{/notes/\d\d\d\d/.*/} do
   case item[:extension]
@@ -28,6 +36,8 @@ end
 # default pipeline & routing
 compile '*' do
   case item[:extension]
+  when 'bib'
+    # TODO filter out the BibDesk noise
   when /(.+\.)?js/
     filter :closure_compiler
   when 'sass'
@@ -54,3 +64,4 @@ route '*' do
   end
 end
 
+#  vim: set ts=2 sw=2 ts=2 :

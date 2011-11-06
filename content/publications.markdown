@@ -10,7 +10,7 @@ If needed, please also refer to [DBLP](http://www.informatik.uni-trier.de/~ley/d
 <p class="banner">Our <a href="#Pollet2007sarSoa">survey on software architecture reconstruction</a> received the best paper award at CSMR&nbsp;2007; we later published an <a href="#Ducasse2009sarSoa">extended journal version in IEEE TSE</a>.</p>
 
 
-{include_file: data/publications.part.html}
+<%= item_named('/publications/DamienPollet/').compiled_content(:rep => :html) %>
 
 
 <%#
