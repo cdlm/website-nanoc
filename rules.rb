@@ -1,4 +1,5 @@
-layout '*', :by_extension
+layout '*', :by_extension,
+  :haml => { :ugly => true }
 
 # do not generate partials, Sass includes, etc
 compile %r{/(_|README)} do end
