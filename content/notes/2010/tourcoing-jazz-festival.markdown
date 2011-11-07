@@ -1,7 +1,7 @@
 ---
 title: Intensive jazz week in Tourcoing
 created_at: 2010-10-17
-#image: /notes/images/bass.jpg
+#image: /notes/images/bass/
 tags: [music]
 ---
 <% content_for :summary do %>

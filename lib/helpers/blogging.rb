@@ -1,4 +1,4 @@
 def article_image(item)
-  Nanoc3::Item.by_identifier item[:image]
+  item_named item[:image]
 end
 

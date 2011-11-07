@@ -1,15 +1,24 @@
--# if img = article_image(@item)
-  -# link to big/external version
-  -# %img.right{:alt => img[:title], :title => img[:credits]}
-
 %h1= @item[:title]
+
+- if img = article_image(@item)
+  .right<
+    - img_credits = "#{img[:title]} — #{img[:credits]}"
+    - if img[:link]
+      %a{:href => img[:link]}<
+        %img{:src => relative_path_to(img),
+             :alt => img[:title],
+             :title => "#{img_credits} #{img[:link]}"}
+    - else
+      %img.right{:src => relative_path_to(img),
+                 :alt => img[:title],
+                 :title => img_credits}
 
 .postmeta
   %span.date= @item[:created_at].strftime "%d %b %Y"
   - unless @item[:tags].nil? or @item[:tags].empty?
-    %span.tags
+    %span.tags>
       in
-      - tags_for @item, :base_url => info(:tag_base_url)
+      = tags_for @item, :base_url => info(:tag_base_url)
 
 = content_for(@item, :summary)
 

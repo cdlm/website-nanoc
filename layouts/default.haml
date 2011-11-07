@@ -17,7 +17,7 @@
     = head_content
 
   %body
-    #pagetop.hide
+    #pagetop.hide<
       %p Skip to: <a href="#menu" accesskey="2">Site menu</a> | <a href="#main" accesskey="3">Main content</a>
 
     #container
@@ -39,7 +39,7 @@
         = clear
       = clear
 
-    #pagebottom
+    #pagebottom<
       = render "partials/footer"
       %a.hide{:href => "#pagetop", :accesskey => "1"} Back to top
 

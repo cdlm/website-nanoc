@@ -1,7 +1,7 @@
 ---
 title: Integrating OmniGraffle and Latexmk
 created_at: 2010-01-24
-image: /notes/images/letterpress.jpg
+image: /notes/images/letterpress/
 tags: [latex]
 ---
 <% content_for :summary do %>

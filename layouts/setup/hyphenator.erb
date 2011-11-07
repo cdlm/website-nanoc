@@ -10,8 +10,11 @@
       }
     });
   Hyphenator.config({
-      persistentconfig : true,
-      useCSS3hyphenation : true
+      persistentconfig: true,
+      useCSS3hyphenation: true,
+      selectorfunction: function() {
+        return $('.hyphenation p').get();
+      }
   });
   Hyphenator.run();
 </script>

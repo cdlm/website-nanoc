@@ -7,10 +7,7 @@ blog.languages: en
 head:
    link:
       - {rel: alternate, type: application/atom+xml, href: /notes/feed.atom, title: Posts (Atom)}
-      - rel: alternate
-        type: application/rss+xml
-        href: /notes/feed.rss
-        title: Posts (RSS)
+      - {rel: alternate, type: application/rss+xml, href: /notes/feed.rss, title: Posts (RSS)}
 ---
 # <%= @item[:title] %>
 
