@@ -7,7 +7,11 @@ route %r{/(_|README)} do  nil  end
 
 # blog articles
 preprocess do
-  
+  puts
+  all_feeds.each do |feed|
+    feed.entries.each do |e| puts "#{e[:created_at]} #{e.identifier} #{e[:tags].join ','}" end
+    # puts feed.classified_by { |i| i[:created_at].year}.inspect
+  end
 end
 
 compile '/publications/DamienPollet/', :rep => :html do

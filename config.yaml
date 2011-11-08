@@ -1,4 +1,10 @@
-text_extensions: [ 'bib', 'css', 'erb', 'haml', 'htm', 'html', 'js', 'less', 'markdown', 'md', 'php', 'rb', 'sass', 'scss', 'txt', 'xhtml', 'xml' ]
+text_extensions: [
+  'bib', 'php', 'rb', 'js',
+  'css', 'less', 'sass', 'scss',
+  'erb', 'haml',
+  'txt', 'markdown', 'md',
+  'htm', 'html', 'xhtml', 'xml',
+  'feed' ]
 
 # output_dir: output
 output_dir: /Users/damien/Sites/nanoc

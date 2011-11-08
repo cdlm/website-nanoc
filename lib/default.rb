@@ -20,8 +20,9 @@ def extension(ext=nil)
 end
 
 # Attribute lookup
-def info(key)
-  item.attributes.fetch(key) { config[:default_info][key] }
+def info(key, item=nil)
+  item ||= @item
+  item.attributes.fetch(key) { @site.config[:default_info][key] }
 end
 
 # Menu generation
@@ -65,6 +66,7 @@ end
 
 # Core extensions
 class Nanoc3::Item
+  # Item hierarchy
   def ancestor_of?(item)
     return false if item.nil?
     return true if item == self
@@ -75,7 +77,7 @@ class Nanoc3::Item
   def is_root?()  self.identifier == '/'  end
 end
 
-# patch colors for solarized shinyness
+# Patch colors for solarized shinyness
 module Nanoc3::CLI
   class Logger
     (ACTION_COLORS ||= {}).update(
