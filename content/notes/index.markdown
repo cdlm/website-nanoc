@@ -1,9 +1,6 @@
 ---
 title: Playing Tenuki
 menu_title: Notes
-blog.filter: /notes/[0-9][0-9][0-9][0-9]/**/*.html
-blog.post_per_page: 5
-blog.languages: en
 head:
    link:
       - {rel: alternate, type: application/atom+xml, href: /notes/feed.atom, title: Posts (Atom)}

@@ -1,0 +1,6 @@
+%h3= @year
+- @posts.each do |id|
+  - post = item_named(id)
+  .postmeta
+    %span.date= post[:created_at].strftime "%d %b"
+  %p= link_to post[:title], post

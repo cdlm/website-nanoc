@@ -7,10 +7,13 @@ route %r{/(_|README)} do  nil  end
 
 # blog articles
 preprocess do
-  puts
   all_feeds.each do |feed|
-    feed.entries.each do |e| puts "#{e[:created_at]} #{e.identifier} #{e[:tags].join ','}" end
-    # puts feed.classified_by { |i| i[:created_at].year}.inspect
+    feed.chain_entries
+    # feed[:all_tags] = feed.entries.collect_concat { |e| e[:tags] }
+    # feed[:by_tag]   = feed.classified_by { |e| e[:tags] }
+    # feed[:by_year]  = feed.classified_by { |e| e[:created_at].year }
+
+    feed.generate
   end
 end
 
@@ -44,13 +47,13 @@ compile '*' do
   when 'bib'
     # TODO filter out the BibDesk noise
   when /(.+\.)?js/
-    filter :closure_compiler
+    # filter :closure_compiler
   when 'sass'
     filter :sass, :style => :compact
     filter :relativize_paths, :type => :css
-  when 'html', 'markdown'
+  when 'erb', 'html', 'markdown'
     filter :erb
-    filter :kramdown
+    filter :kramdown unless item[:extension] == 'erb'
     layout 'default'
     filter :rubypants
     filter :relativize_paths, :type => :html
@@ -62,7 +65,7 @@ route '*' do
   case item[:extension]
   when 'sass'
     extension 'css'
-  when 'markdown'
+  when 'erb', 'markdown'
     extension 'html'
   else
     extension

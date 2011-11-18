@@ -1,12 +1,22 @@
 ---
 title: Playing Tenuki
 subtitle: the art of computer procrastinating
+author: Damien Pollet
 description: >
   Random articles not completely unrelated
   to research, objects, and programming languages.
-author: Damien Pollet
 site_url: http://people.untyped.org/damien.pollet/
 entries: /notes/[0-9][0-9][0-9][0-9]/[^/]+/
+archives:
+    identifier: /notes/archives/
+    layout: /article_year/
+    attributes:
+        title: Archives — Playing Tenuki
+tags:
+    identifier: /notes/tags/
+    layout: /article_tag/
+    attributes:
+        title: Tags — Playing Tenuki
 ---
 
 # vim: set ft=yaml :
