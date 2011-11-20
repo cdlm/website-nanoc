@@ -9,10 +9,7 @@ route %r{/(_|README)} do  nil  end
 preprocess do
   all_feeds.each do |feed|
     feed.chain_entries
-    # feed[:all_tags] = feed.entries.collect_concat { |e| e[:tags] }
-    # feed[:by_tag]   = feed.classified_by { |e| e[:tags] }
-    # feed[:by_year]  = feed.classified_by { |e| e[:created_at].year }
-
+    feed.set_info
     feed.generate
   end
 end

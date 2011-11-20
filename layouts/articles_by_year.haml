@@ -1,0 +1,7 @@
+%h1= @item[:title]
+- @item[:contents].each do |year, posts_that_year|
+  %h3= year
+  - posts_that_year.each do |post|
+    .postmeta<
+      %span.date= post[:created_at].strftime "%d %b"
+    %p= link_to post[:title], post

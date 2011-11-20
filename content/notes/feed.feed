@@ -7,16 +7,18 @@ description: >
   to research, objects, and programming languages.
 site_url: http://people.untyped.org/damien.pollet/
 entries: /notes/[0-9][0-9][0-9][0-9]/[^/]+/
+entries_info:
+  tag_base_url: /notes/tags.html#
 archives:
-    identifier: /notes/archives/
-    layout: /article_year/
-    attributes:
-        title: Archives — Playing Tenuki
+  identifier: /notes/archives/
+  layout: /articles_by_year/
+  attributes:
+    title: Archives of Playing Tenuki
 tags:
-    identifier: /notes/tags/
-    layout: /article_tag/
-    attributes:
-        title: Tags — Playing Tenuki
+  identifier: /notes/tags/
+  layout: /articles_by_tag/
+  attributes:
+    title: Tags of Playing Tenuki
 ---
 
 # vim: set ft=yaml :

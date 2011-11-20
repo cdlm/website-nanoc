@@ -25,7 +25,7 @@ module Blogging
       @site = site
       @root = root
       @entries = nil
-      # validate root
+      # TODO validate root
     end
 
     def identifier()  @root.identifier  end
@@ -43,15 +43,43 @@ module Blogging
       return @entries
     end
 
+    def mtime(items=nil)
+      (items || self.entries).collect{ |e| e[:mtime] }.max
+    end
+
     def chain_entries
       prev = nil
-      entries.each do |i|
+      entries.each do |current|
         unless prev.nil?
-          prev[:next] = i #.identifier
-          i[:prev] = prev #.identifier
+          prev[:next] = current
+          current[:prev] = prev
         end
-        prev = i
+        prev = current
       end
+    end
+
+    def set_info
+      entries.each do |e|
+        e.attributes.update(self[:entries_info])
+      end
+    end
+
+    def generate
+      @site.items << archive_item unless self[:archives].nil?
+      @site.items << tag_item unless self[:tags].nil?
+    end
+
+    def archive_item
+      contents = classified_entries{ |e| e[:created_at].year.to_s }
+      return classification_item(contents, mtime, self[:archives])
+    end
+
+    def tag_item 
+      contents, unsorted_tags = {}, classified_entries{ |e| e[:tags] }
+      unsorted_tags.keys.sort.each do |t|
+        contents[t] = unsorted_tags[t]
+      end
+      return classification_item(contents, mtime, self[:tags])
     end
 
     def classified_entries(reverse=true, &block)
@@ -68,53 +96,21 @@ module Blogging
       end
       return result
     end
-  end
 
-  def generate
-    @site.items.concat archive_items
-    @site.items.concat tag_items
-  end
+    def classification_item(contents, mtime, options)
+      attributes = {
+        :contents => contents,
+        :mtime => mtime,
+        :extension => 'erb'
+      }.update(options[:attributes])
 
-  def archive_items
-    return [] if self[:archives].nil?
-
-    identifier = self[:archives][:identifier]
-    layout     = self[:archives][:layout]
-    attributes = { :extension => 'erb', :mtime => entries.collect{ |e| e[:mtime] }.max }
-    attributes.update(self[:archives][:attributes])
-
-    years = classified_entries{ |e| e[:created_at].year }
-
-    content = years.collect do |year, posts|
-      post_ids = posts.collect{ |e| e.identifier }
-      "<%= render '#{layout}', :year => '#{year}', :posts => ['#{post_ids.join("', '")}'] %>"
+      return Nanoc3::Item.new(
+        "<%= render '#{options[:layout]}' %>",
+        attributes,
+        options[:identifier])
     end
-    archive_page = Nanoc3::Item.new(content.join("\n"), attributes, identifier)
 
-    return [archive_page]
   end
-
-  def tag_items
-    return [] if self[:tags].nil?
-
-    identifier = self[:tags][:identifier]
-    layout     = self[:tags][:layout]
-    attributes = { :extension => 'erb', :mtime => entries.collect{ |e| e[:mtime] }.max }
-    attributes.update(self[:archives][:attributes])
-
-    unsorted_tags = classified_entries{ |e| e[:tags] }
-    tags = {}
-    unsorted_tags.keys.sort.each do |t| tags[t] = unsorted_tags[t] end
-
-    content = tags.collect do |tag, posts|
-      post_ids = posts.collect{ |e| e.identifier }
-      "<%= render '#{layout}', :tag => '#{tag}', :posts => ['#{post_ids.join("', '")}'] %>"
-    end
-    tag_page = Nanoc3::Item.new(content.join("\n"), attributes, identifier)
-
-    return [tag_page]
-  end
-
 end
 
 include Blogging

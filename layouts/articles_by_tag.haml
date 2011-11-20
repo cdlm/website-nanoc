@@ -1,0 +1,7 @@
+%h1= @item[:title]
+- @item[:contents].each do |tag, posts_tagged|
+  %h3(id=tag)= tag
+  - posts_tagged.each do |post|
+    .postmeta<
+      %span.date= post[:created_at].strftime "%d %b %Y"
+    %p= link_to post[:title], post
