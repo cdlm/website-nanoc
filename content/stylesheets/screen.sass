@@ -10,7 +10,8 @@ $link_color: rgb(17, 68, 152)
 
 $banner_color: rgb(222, 239, 209)
 $highlight_color: rgb(255, 255, 160)
-$marker_color: rgb(255, 214, 20)
+// $marker_color: rgb(255, 214, 20)
+$marker_color: $highlight_color
 
 =rounded
   border-radius: 0.5em
@@ -69,8 +70,8 @@ body
 a
   color: $body_link_color
   text-decoration: none
-  // &:hover
-  //   text-decoration: underline
+  &:hover
+    text-decoration: underline
   //   -webkit-animation:
   //     name: pulse
   //     iteration-count: infinite
@@ -181,6 +182,8 @@ a
       display: block
       margin: .5ex 0
       color: #666666
+    .award
+      +marker
   .highlight, .banner
     margin: 1em -14.5em 1em -14.5em !important
     padding: 1ex 14.5em 1ex 14.5em
