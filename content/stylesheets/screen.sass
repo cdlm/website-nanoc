@@ -1,6 +1,9 @@
 @import reset
 @import slides
 
+$text_font: Ubuntu, "Myriad Pro", Calibri, HelveticaNeue, Helvetica, DejaVuSansCondensed, sans-serif
+$display_font: $text_font
+
 $body_color: rgb(95, 166, 68)
 $body_alt_color: rgb(72, 142, 69)
 $body_link_color: rgb(29, 61, 53)
@@ -64,7 +67,7 @@ html
 
 body
   margin: 1em
-  font-family: Ubuntu, "Myriad Pro", Calibri, HelveticaNeue, Helvetica, DejaVuSansCondensed, sans-serif
+  font-family: $text_font
   line-height: 1.3
 
 a
@@ -106,11 +109,14 @@ a
     color: $headings_color
     margin: 2ex 0 1ex 0
   h1
+    font-family: $display_font
     font-size: 250%
     font-weight: lighter
   h2
+    font-family: $display_font
     font-size: 180%
   h3
+    font-family: $display_font
     font-size: 130%
   h5
     color: $headings_color
