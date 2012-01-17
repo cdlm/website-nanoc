@@ -1,0 +1,11 @@
+gem 'nanoc'
+gem 'rake'
+gem 'guard-nanoc'
+gem 'rb-fsevent'
+gem 'growl'
+
+gem 'kramdown'
+gem 'sass'
+gem 'haml'
+gem 'nokogiri'
+gem 'rubypants'

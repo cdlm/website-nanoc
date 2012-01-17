@@ -15,11 +15,14 @@ data_sources:
   - { type: filesystem_unified, items_root: /, layouts_root: / }
 
 deploy:
-  default:
-    dst: 'localhost:/Users/damien/Sites/website-nanoc'
+  local:
+    kind: rsync
+    dst: localhost:/Users/damien/Sites/website-nanoc
     options: [ --rsh=ssh, --archive, --delete-after, --verbose, --progress, --compress ]
-  staging:
-    dst: /Users/damien/Sites/website-nanoc
+  public:
+    kind: rsync
+    dst: ryu.zarb.org:/home/users/cdlm/vhosts/people.untyped.org/docroot/damien.pollet
+    options: [ --rsh=ssh, --archive, --delete-after, --verbose, --progress, --compress ]
 
 tag_base_url: /notes/tags/
 #http://people.untyped.org/damien.pollet
