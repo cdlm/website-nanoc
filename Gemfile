@@ -1,7 +1,7 @@
+source :rubygems
+
 gem 'nanoc'
 gem 'rake'
-gem 'guard-nanoc'
-gem 'rb-fsevent'
 gem 'growl'
 
 gem 'kramdown'

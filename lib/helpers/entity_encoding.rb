@@ -4,10 +4,10 @@
 module EntityEncoding
 
   require 'uri'
-  require 'nanoc3/helpers/capturing'
-  require 'nanoc3/helpers/html_escape'
-  include Nanoc3::Helpers::Capturing
-  include Nanoc3::Helpers::HTMLEscape
+  require 'nanoc/helpers/capturing'
+  require 'nanoc/helpers/html_escape'
+  include Nanoc::Helpers::Capturing
+  include Nanoc::Helpers::HTMLEscape
 
   # Encode the given string or block. All characters are replaced by
   # their numeric HTML entities.

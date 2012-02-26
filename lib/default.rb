@@ -3,12 +3,12 @@
 
 require 'nokogiri'
 
-include Nanoc3::Helpers::Blogging
-include Nanoc3::Helpers::Capturing
-include Nanoc3::Helpers::HTMLEscape
-include Nanoc3::Helpers::LinkTo
-include Nanoc3::Helpers::Rendering
-include Nanoc3::Helpers::Tagging
+include Nanoc::Helpers::Blogging
+include Nanoc::Helpers::Capturing
+include Nanoc::Helpers::HTMLEscape
+include Nanoc::Helpers::LinkTo
+include Nanoc::Helpers::Rendering
+include Nanoc::Helpers::Tagging
 
 # Route by setting the extension
 def extension(ext=nil)
@@ -65,7 +65,7 @@ def items_by_identifier(pattern)
 end
 
 # Core extensions
-class Nanoc3::Item
+class Nanoc::Item
   # Item hierarchy
   def ancestor_of?(item)
     return false if item.nil?
@@ -78,7 +78,7 @@ class Nanoc3::Item
 end
 
 # Patch colors for solarized shinyness
-module Nanoc3::CLI
+module Nanoc::CLI
   class Logger
     (ACTION_COLORS ||= {}).update(
       :create     => "\e[38;5;2m",

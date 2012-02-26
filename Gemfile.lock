@@ -1,36 +1,26 @@
 GEM
+  remote: http://rubygems.org/
   specs:
-    cri (2.1.0)
-    ffi (1.0.11)
+    cri (2.2.1)
     growl (1.0.3)
-    guard (0.10.0)
-      ffi (>= 0.5.0)
-      thor (~> 0.14.6)
-    guard-nanoc (0.1.0)
-      guard (>= 0.2.1)
-      nanoc (>= 3.1.5)
     haml (3.1.4)
-    kramdown (0.13.4)
-    nanoc (3.3.0)
-      cri (~> 2.1)
-    nokogiri (1.5.0)
+    kramdown (0.13.5)
+    nanoc (3.4.0)
+      cri (~> 2.2)
+    nokogiri (1.5.2)
     rake (0.9.2.2)
-    rb-fsevent (0.4.3.1)
     rubypants (0.2.0)
-    sass (3.1.12)
-    thor (0.14.6)
+    sass (3.1.16)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   growl
-  guard-nanoc
   haml
   kramdown
   nanoc
   nokogiri
   rake
-  rb-fsevent
   rubypants
   sass
