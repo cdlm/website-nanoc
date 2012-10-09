@@ -2,7 +2,8 @@ source :rubygems
 
 gem 'nanoc'
 gem 'rake'
-gem 'growl'
+gem 'listen'
+gem 'rb-fsevent', '~> 0.9.1' # for listen, else it polls
 
 gem 'kramdown'
 gem 'sass'
