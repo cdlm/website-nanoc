@@ -12,7 +12,7 @@
     %link{:rel => "stylesheet", :type => "text/css", :href => "/stylesheets/animations.css", :media => "screen,projection"}
     -# %link{:rel => "stylesheet", :type => "text/css", :href => "/stylesheets/print.css", :media => "print"}
 
-    %title= "#{info :site_title} — #{@item[:title]}"
+    %title= "#{info :header_title} — #{@item[:title]}"
 
     = head_content
 
@@ -23,9 +23,9 @@
     #container
       #header
         %h1<
-          %a{:href => "/index.html", :accesskey => "4"}= info :site_title
+          %a{:href => info(:header_url), :accesskey => "4"}= info :header_title
         #tagline<
-          = info :site_slogan
+          = info :header_slogan
         = clear
         #menu<
           %ul

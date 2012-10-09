@@ -33,8 +33,9 @@ default_info:
   author_url: http://people.untyped.org/damien.pollet
   analytics: 'UA-718463-2'
   site_lang: en
-  site_title: Damien Pollet
-  site_slogan: >
+  header_title: Damien Pollet
+  header_url: /
+  header_slogan: >
     Assistant professor,
     <a href="http://www.univ-lille1.fr">university of Lille 1, France</a><br/>
     <em>object-oriented software (re)engineering &amp; language design</em>
@@ -47,7 +48,7 @@ default_info:
     visualisation,
     virtual machines,
     object-oriented
-  site_menu:
+  header_menu:
     - /publications/
     - /research/
     - /teaching/

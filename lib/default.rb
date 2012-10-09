@@ -27,7 +27,7 @@ end
 
 # Menu generation
 def menu_items
-  info(:site_menu).collect do |id|
+  info(:header_menu).collect do |id|
     item_named(id)
   end
 end
