@@ -1,5 +1,6 @@
 ---
 title: Home
+menu_title: About me
 ---
 <%= render 'partials/markdown_links' %>
 [![Logo USTL](/images/ustl-128.jpg){: .noframe}][ustl]

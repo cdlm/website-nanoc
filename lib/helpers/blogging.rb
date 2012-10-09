@@ -43,6 +43,10 @@ module Blogging
       return @entries
     end
 
+    def entries_by_year
+      classified_entries{ |e| e[:created_at].year.to_s }
+    end
+
     def mtime(items=nil)
       (items || self.entries).collect{ |e| e[:mtime] }.max
     end
@@ -66,12 +70,20 @@ module Blogging
 
     def generate
       @site.items << archive_item unless self[:archives].nil?
+      @site.items.concat yearly_archive_items unless self[:archives_yearly].nil?
       @site.items << tag_item unless self[:tags].nil?
     end
 
     def archive_item
-      contents = classified_entries{ |e| e[:created_at].year.to_s }
+      contents = entries_by_year
       return classification_item(contents, mtime, self[:archives])
+    end
+
+    def yearly_archive_items
+      years = entries_by_year
+      return years.collect{ |y, es|
+        classification_item({y => es}, mtime(es), self[:archives_yearly], year: y)
+      }
     end
 
     def tag_item 
@@ -97,17 +109,20 @@ module Blogging
       return result
     end
 
-    def classification_item(contents, mtime, options)
+    def classification_item(contents, mtime, options, args={})
       attributes = {
-        :contents => contents,
-        :mtime => mtime,
-        :extension => 'erb'
-      }.update(options[:attributes])
+        contents: contents,
+        mtime: mtime,
+        extension: 'erb'
+      }
+      options[:attributes].each do |k,v|
+        attributes[k] = v % args
+      end
 
       return Nanoc3::Item.new(
         "<%= render '#{options[:layout]}' %>",
         attributes,
-        options[:identifier])
+        options[:identifier] % args)
     end
 
   end

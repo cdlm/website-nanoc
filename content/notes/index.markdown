@@ -12,14 +12,17 @@ header_menu:
   - /notes/archives/
   - /notes/tags/
 head:
-   link:
-      - {rel: alternate, type: application/atom+xml, href: /notes/feed.atom, title: Posts (Atom)}
-      - {rel: alternate, type: application/rss+xml, href: /notes/feed.rss, title: Posts (RSS)}
+  link:
+    - {rel: alternate, type: application/atom+xml, href: /notes/feed.atom, title: Posts (Atom)}
+    - {rel: alternate, type: application/rss+xml, href: /notes/feed.rss, title: Posts (RSS)}
 ---
-[Archives](archives.html)
-{: .right}
 
 # <%= @item[:title] %>
+
+<% feed_named('/notes/feed/').entries.last(5).reverse.each do |post| %>
+  <%= render 'article_summary', item: post %>
+<% end %>
+
 
 ###### Why the name?
 [Tenuki](http://senseis.xmp.net/?Tenuki) is a term from the [game of Go](http://senseis.xmp.net/?Go) that denotes ignoring the current local battle and just playing somewhere else.

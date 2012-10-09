@@ -14,6 +14,7 @@ preprocess do
   end
 end
 
+# publications list from bibliography
 compile '/publications/DamienPollet/', :rep => :html do
   filter :external,
     :cmd => "bibhtmlize/bibhtmlize #{item[:content_filename]}",
@@ -22,6 +23,7 @@ end
 
 route '/publications/DamienPollet/', :rep => :html do  nil  end
 
+# blog articles
 compile %r{/notes/\d\d\d\d/.*/} do
   case item[:extension]
   when 'html', 'markdown'

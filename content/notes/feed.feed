@@ -8,17 +8,23 @@ description: >
 site_url: http://people.untyped.org/damien.pollet/
 entries: /notes/[0-9][0-9][0-9][0-9]/[^/]+/
 entries_info:
-  tag_base_url: /notes/tags.html#
+  tag_base_url: /notes/tags/#
 archives:
   identifier: /notes/archives/
   layout: /articles_by_year/
   attributes:
-    title: Archives of Playing Tenuki
+    title: Yearly archives
+    menu_title: Archives
+archives_yearly:
+  identifier: /notes/%{year}/
+  layout: /articles_in_year/
+  attributes:
+    title: Posted in %{year}
 tags:
   identifier: /notes/tags/
   layout: /articles_by_tag/
   attributes:
-    title: Tags of Playing Tenuki
+    title: Tags
 ---
 
 # vim: set ft=yaml :

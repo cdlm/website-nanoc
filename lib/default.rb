@@ -11,18 +11,24 @@ include Nanoc::Helpers::Rendering
 include Nanoc::Helpers::Tagging
 
 # Route by setting the extension
-def extension(ext=nil)
+def extension(ext=nil, opts={})
   e = ext || item[:extension] || ''
   e = ".#{e}" unless e.empty?
   id = item.identifier.chop
-  id = "/index" if id.empty?
+  id += "/index" if opts[:as_index] || id.empty?
   id + e
 end
 
 # Attribute lookup
 def info(key, item=nil)
   item ||= @item
-  item.attributes.fetch(key) { @site.config[:default_info][key] }
+  item.attributes.fetch(key) do
+    if item.parent.nil?
+      @site.config[:default_info][key]
+    else
+      info key, item.parent
+    end
+  end
 end
 
 # Menu generation
