@@ -2,10 +2,11 @@ source :rubygems
 
 gem 'nanoc'
 gem 'rake'
-gem 'listen'
+gem 'listen' # watch
 gem 'rb-fsevent', '~> 0.9.1' # for listen, else it polls
-gem 'systemu'
+gem 'systemu' # deploy
 
+gem 'builder' # sitemap
 gem 'kramdown'
 gem 'sass'
 gem 'haml'

@@ -25,6 +25,7 @@ tags:
   layout: /articles_by_tag/
   attributes:
     title: Tags
+is_hidden: true
 ---
-
-# vim: set ft=yaml :
+<%# atom_feed :limit => 5 %>
+<%# vim: set ft=yaml : %>

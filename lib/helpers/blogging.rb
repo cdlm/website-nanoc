@@ -113,7 +113,8 @@ module Blogging
       attributes = {
         contents: contents,
         mtime: mtime,
-        extension: 'erb'
+        extension: 'erb',
+        is_hidden: true
       }
       options[:attributes].each do |k,v|
         attributes[k] = v % args

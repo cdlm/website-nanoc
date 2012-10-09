@@ -5,6 +5,10 @@ text_extensions: [
   'txt', 'markdown', 'md',
   'htm', 'html', 'xhtml', 'xml',
   'feed' ]
+hidden_extensions: [
+  'png', 'gif', 'jpg', 'jpeg',
+  'js', 'coffee',
+  'css', 'scss', 'sass', 'less' ]
 
 # output_dir: output
 output_dir: /Users/damien/Sites/nanoc
@@ -12,7 +16,7 @@ output_dir: /Users/damien/Sites/nanoc
 # index_filenames: [ 'index.html' ]
 
 data_sources:
-  - { type: filesystem_unified, items_root: /, layouts_root: / }
+  - { type: filesystem_unified, items_root: /, layouts_root: /, allow_periods_in_identifiers: true }
 
 deploy:
   local:
@@ -24,13 +28,12 @@ deploy:
     dst: ryu.zarb.org:/home/users/cdlm/vhosts/people.untyped.org/docroot/damien.pollet
     options: [ --rsh=ssh, --archive, --delete-after, --verbose, --progress, --compress ]
 
+base_url: http://people.untyped.org/damien.pollet
 tag_base_url: /notes/tags/
-#http://people.untyped.org/damien.pollet
 
 # default and global metadata
 default_info:
   author: Damien Pollet
-  author_url: http://people.untyped.org/damien.pollet
   analytics: 'UA-718463-2'
   site_lang: en
   header_title: Damien Pollet

@@ -24,7 +24,7 @@ def info(key, item=nil)
   item ||= @item
   item.attributes.fetch(key) do
     if item.parent.nil?
-      @site.config[:default_info][key]
+      @site.config[:default_info].fetch(key){ @site.config[key] }
     else
       info key, item.parent
     end
