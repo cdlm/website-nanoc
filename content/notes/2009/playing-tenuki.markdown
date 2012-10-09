@@ -30,10 +30,10 @@ Actually [Nicolas][] pointed me to [Sacha Chua][]'s presentation [*The Shy Conne
 
 So, let these pages be my conversation-with-strangers baits! *Mwa-ha-ha.*
 
-<div style="text-align:center" id="__ss_1879213">
-  <object style="margin:0px" width="425" height="355"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=the-shy-connector-090818212320-phpapp01&rel=0&stripped_title=the-shy-connector" /><param name="allowFullScreen" value="true"/><param name="allowScriptAccess" value="always"/><embed src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=the-shy-connector-090818212320-phpapp01&rel=0&stripped_title=the-shy-connector" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="355"/></object>
-  <div class="light">View more <a href="http://www.slideshare.net/">documents</a> from <a href="http://www.slideshare.net/sachac">Sacha Chua</a>.</div>
-</div>
+<center>
+<iframe src="http://www.slideshare.net/slideshow/embed_code/1879213?rel=0" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen> </iframe>
+<div><a href="http://www.slideshare.net/sachac/the-shy-connector" title="The Shy Connector" target="_blank">The Shy Connector</a> from <a href="http://www.slideshare.net/sachac" target="_blank">Sacha Chua</a></div>
+</center>
 
 [nicolas]: http://www.roard.com/seaside/pier/about "His site uses Seaside + Pier, and mine file-based web pages… I make such a *baaad* Smalltalker :D"
 [sacha chua]: http://sachachua.com
