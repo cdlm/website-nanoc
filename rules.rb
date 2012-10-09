@@ -34,10 +34,6 @@ compile %r{/notes/\d\d\d\d/.*/} do
   end
 end
 
-route '/notes/' do
-  item.identifier + 'index.html'
-end
-
 # default pipeline & routing
 compile '*' do
   case item[:extension]
@@ -57,13 +53,12 @@ compile '*' do
   end
 end
 
-
 route '*' do
   case item[:extension]
   when 'sass'
     extension 'css'
-  when 'erb', 'markdown'
-    extension 'html'
+  when 'erb', 'html', 'markdown'
+    extension 'html', as_index: true
   else
     extension
   end
