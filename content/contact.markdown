@@ -8,16 +8,17 @@ title: Contact
 <%= render 'partials/contact_info' %>
 
 
-###### We are NOT in the Inria building!      {#map}
-So how to find RMoD on the campus?  
-Our offices are at [Lifl][], rooms 111a/b, 116, and 117 of the M3 building (see below or please refer to the [full map][map]).
-{: .highlight}
-
-We do have a preferred contact point at Inria, however; our project-team assistant:
+<div id="map" class="highlight">
+  <h6>Our offices are at Inria, building B</h6>
+  <p>We moved back to Inria from Lifl in October&nbsp;2012.
+    We're now in building&nbsp;B, just in front of building&nbsp;A, where the reception is.<br/>
+    <a href="http://www.inria.fr/en/centre/lille/overview/locations">&rarr;&nbsp;opening hours &amp; directions</a>
+  </p>
+</div>
 
 RMoD Assistant/Secretary
-: Marie-Bénédicte Dernoncourt
-: Phone: +33&nbsp;3&nbsp;59&nbsp;57&nbsp;79&nbsp;45 --- Fax: +33&nbsp;3&nbsp;59&nbsp;57&nbsp;79&nbsp;51
+: Christelle Gasperini
+: phone: <%= phone "03 59 57 78 85" %> --- fax: <%= phone "03 59 57 79 51" %>
 : <address>
     Centre de recherche Inria Lille – Nord Europe<br/>
     parc scientifique de la Haute Borne<br/>
