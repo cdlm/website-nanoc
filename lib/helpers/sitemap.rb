@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 include Nanoc::Helpers::XMLSitemap
 
 def hide_items

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 # All files in the 'lib' directory will be loaded
 # before nanoc starts compiling.
 

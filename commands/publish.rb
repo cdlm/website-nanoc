@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 usage 'publish'
 aliases :p, :pub
 summary 'shortcut for nanoc deploy -t public'

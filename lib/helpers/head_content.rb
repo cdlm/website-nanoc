@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 def head_content
   result = ""
   return result unless @item[:head]

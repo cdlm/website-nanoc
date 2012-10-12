@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 layout '*', :by_extension,
   :haml => { :ugly => true }
 

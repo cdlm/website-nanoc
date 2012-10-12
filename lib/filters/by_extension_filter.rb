@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class ByExtension < Nanoc3::Filter
     identifier :by_extension
     type :text
