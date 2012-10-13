@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 layout '*', :by_extension,
-  :haml => { :ugly => true }
+  :haml => { format: :xhtml, ugly: true }
 
 # do not generate partials, Sass includes, etc
 compile %r{/(_|README)} do end

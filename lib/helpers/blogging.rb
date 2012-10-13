@@ -87,7 +87,7 @@ module Blogging
       }
     end
 
-    def tag_item 
+    def tag_item
       contents, unsorted_tags = {}, classified_entries{ |e| e[:tags] }
       unsorted_tags.keys.sort.each do |t|
         contents[t] = unsorted_tags[t]
