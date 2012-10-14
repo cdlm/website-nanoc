@@ -4,7 +4,7 @@ created_at: 2010-01-24
 image: /notes/images/letterpress/
 tags: [latex]
 ---
-<% content_for :summary do %>
+<% excerpt :summary do %>
 Compiling LaTeX documents can be quite a hassle, because it's an iterative process, and the dependancies are not really clear.
 There is one gem of a tool, however, that any regular LaTeXer should know: [Latexmk][].
 

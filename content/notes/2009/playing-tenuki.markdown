@@ -4,7 +4,7 @@ created_at: 2009-12-06
 image: /notes/images/game-of-go/
 tags: [blog]
 ---
-<% content_for :summary do %>
+<% excerpt :summary do %>
 I know, this is yet *another* re-opening-my-blog blog post ;)
 
 I've already maintained a blog before; it was a [Typo][] instance running on a venerable [Sun Ultra 5][ultra5] workstation behind my home DSL. As you can guess, Ruby on a 360MHz CPU is *not* fast, so it was getting painful to edit, and then I moved to Swiss, and the poor server got neglected.

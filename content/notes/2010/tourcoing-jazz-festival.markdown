@@ -4,7 +4,7 @@ created_at: 2010-10-17
 #image: /notes/images/bass/
 tags: [music]
 ---
-<% content_for :summary do %>
+<% excerpt :summary do %>
 Mid-october is the time for jazz lovers around Lille, with the [Tourcoing Jazz Festival][tjf].
 This year it was from Oct. 16th to 23rd, and I suspect whoever invited the artists must have peeked at my music library; I just _had_ to get the whole-week pass.
 

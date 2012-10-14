@@ -40,7 +40,6 @@ compile %r{/notes/\d\d\d\d/.*/} do
   case item[:extension]
   when 'html', 'markdown'
     filter :erb
-    layout 'article_fulltext'
     filter :kramdown
     filter :rubypants
     layout 'article'

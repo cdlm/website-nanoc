@@ -4,7 +4,7 @@ created_at: 2010-04-17
 image: /notes/images/keyboard/
 tags: [usability, hack]
 ---
-<% content_for :summary do %>
+<% excerpt :summary do %>
 Like many programmers whose main language is not English, I've been facing the keyboard dilemma for a while:
 keep my native layout even though frequent programming characters like `[]{}|\` require 2 or 3 fingers, or adopt the standard US Qwerty layout?
 
