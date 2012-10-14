@@ -22,21 +22,21 @@ deploy:
   local:
     kind: rsync
     dst: localhost:/Users/damien/Sites/website-nanoc
-    options: [ --rsh=ssh, --archive, --delete-after, --verbose, --progress, --compress ]
+    options: &RSYNCOPTS [ --rsh=ssh, --archive, --delete-after, --verbose, --progress, --compress ]
   public:
     kind: rsync
     dst: ryu.zarb.org:/home/users/cdlm/vhosts/people.untyped.org/docroot/damien.pollet
-    options: [ --rsh=ssh, --archive, --delete-after, --verbose, --progress, --compress ]
+    options: *RSYNCOPTS
 
-base_url: http://people.untyped.org/damien.pollet
-tag_base_url: /notes/tags/
+base_url: &BASE http://people.untyped.org/damien.pollet
+author_uri: *BASE
 
 # default and global metadata
 default_info:
-  author: Damien Pollet
+  author_name: &ME Damien Pollet
   analytics: 'UA-718463-2'
   site_lang: en
-  header_title: Damien Pollet
+  header_title: *ME
   header_url: /
   header_slogan: >
     Assistant professor,
