@@ -19,7 +19,7 @@ This year it was from Oct. 16th to 23rd, and I suspect whoever invited the artis
 
 The festival opened with a concert in Mouscron, near Tourcoing, but on the belgian side of the border, where 5km are more than enough for a poor french driver to get lost…
 
-But I digress :)
+But I digress.
 
 [Renaud García-Fons][rgf] is a virtuoso at crossing the colors of mediterranean musics with the fantastic voice of his five-string double bass.
 The concert was based on [_La Línea del Sur_][linea]; Sabrina danced flamenco in a couple compositions, answering the three others with the taps of her feet.
@@ -39,7 +39,7 @@ I couldn't help but imagine Zakir Hussain conversing with her in ultrafast tabla
 [![Dhafer Youssef, Abu Nawas Rhapsody (2010)](/notes/2010/tourcoing-jazz-festival/abu-nawas-rhapsody.jpg)][abunawas]{: .right}
 
 [Dhafer Youssef][]'s quartet opened this concert in the best way possible, with pieces from his [project dedicated to 8th century poet Abu Nawas][abunawas], intermixing energetic and joyful rhythms with contemplative singing. Wonderful.
-At the piano was an [amazing young armenian](http://liveweb.arte.tv/fr/video/Tigran_Hamasyan_au_festival_Souillac_en_Jazz/), [Tigran Hamasyan][]; Dhafer said he was proud to be part of his career, and, seeing how at 23 he's already played with Chick Corea or Avishai Cohen, I can understand :)
+At the piano was an [amazing young armenian](http://liveweb.arte.tv/fr/video/Tigran_Hamasyan_au_festival_Souillac_en_Jazz/), [Tigran Hamasyan][]; Dhafer said he was proud to be part of his career, and, seeing how at 23 he's already played with Chick Corea or Avishai Cohen, I can understand.
 
 - [Dhafer Youssef][]: oud, vocals,
 - [Tigran Hamasyan][]: piano,
@@ -80,7 +80,7 @@ The trio of [Stefan & Peter Orins and Christophe Hache](http://www.myspace.com/s
 [![McCoy Tyner Quartet (2008)](/notes/2010/tourcoing-jazz-festival/mccoy.jpg)][mccoy]{: .right}
 
 Following them, was some guy that was way to old and too respected by the rest of the audience for me to just discover now: [McCoy Tyner][] and his quartet. This was clearly a different class of jazz, much cleaner, polished and refined.
-Maybe too much? I have to admit I tend to prefer the youngsters that play Jazz versions of Nirvana songs :)
+Maybe too much? I have to admit I tend to prefer the youngsters that play Jazz versions of Nirvana songs.
 
 - [McCoy Tyner][]: piano,
 - Gérald Canon: bass,
@@ -170,7 +170,7 @@ This is a concert centered on the bass, with two great masters.
 
 [Henri Texier]: http://www.label-bleu.com/artist.php?artist_id=91
 
-[Dave Holland][] is a giant, both figuratively and literally; but then he was playing one of these acousting road basses with a truncated belly, so that was cheating a bit :)
+[Dave Holland][] is a giant, both figuratively and literally; but then he was playing one of these acousting road basses with a truncated belly, so that was cheating a bit.
 
 - [Robin Eubanks](http://www.robineubanks.com): trombone,
 - [Dave Holland][]: bass,
@@ -186,7 +186,7 @@ This is a concert centered on the bass, with two great masters.
 [![Marcus Strickland trio, Idiosyncrasies (2009)](/notes/2010/tourcoing-jazz-festival/idiosyncrasies.jpg)][idiosyncrasies]{: .right}
 
 [Marcus Strickland][] seemed quite impressed to open for Wayne Shorter, but then is there a jazz saxophonist out there who wouldn't?
-I particularly liked the story with the strikes in France and how they had to repeatedly suffer hearing one of their themes as the train company's jingle :)
+I particularly liked the story with the strikes in France and how they had to repeatedly suffer hearing one of their themes as the train company's jingle.
 
 - [Marcus Strickland][]: saxophone,
 - [Joe Sanders](http://joesandersbass.com): bass,
