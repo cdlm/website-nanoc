@@ -42,7 +42,6 @@ compile %r{/notes/\d\d\d\d/.*/} do
     filter :erb
     layout 'article'
     filter :kramdown
-    layout 'default'
     filter :rubypants
     filter :relativize_paths, type: :html
   end

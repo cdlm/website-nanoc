@@ -1,0 +1,17 @@
+.postmeta
+  %span.date= @item[:created_at].strftime "%d %b %Y"
+  - unless @item[:tags].nil? or @item[:tags].empty?
+    %span.tags>
+      in
+      = tags_for @item, base_url: info(:tag_base_url)
+  %span.previous>
+    - if @item[:prev].nil?
+      (oldest)
+    - else
+      = link_to "&larr;&nbsp;previous", @item[:prev]
+  %span.next>
+    - if @item[:next].nil?
+      (newest)
+    - else
+      = link_to "next&nbsp;&rarr;", @item[:next]
+

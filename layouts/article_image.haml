@@ -1,0 +1,12 @@
+- if img = article_image(@item)
+  .right<
+    - img_credits = "#{img[:title]} — #{img[:credits]}"
+    - if img[:link]
+      %a{:href => img[:link]}<
+        %img{:src => relative_path_to(img),
+             :alt => img[:title],
+             :title => "#{img_credits} #{img[:link]}"}
+    - else
+      %img.right{:src => relative_path_to(img),
+                 :alt => img[:title],
+                 :title => img_credits}
