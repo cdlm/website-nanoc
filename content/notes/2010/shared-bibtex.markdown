@@ -7,7 +7,7 @@ tags: [latex, bibtex]
 <% excerpt :summary do %>
 As a researcher, I spend most of my time writing [LaTeX][], using [many][texlive] [tools][latexmkcat], among which [BibTeX][], the bibliography database processor. Our team manages a huge `.bib` file centralizing all publications we read and might need to cite someday.
 
-Since nearly everything we write uses that file, so it gets linked or copied into each the source directory of each new document. Some of us even have a bash alias to automate that copy, but they still have to invoke it for each new paper.
+Since nearly everything we write uses that file, it gets linked or copied into each the source directory of each new document. Some of us even have a bash alias to automate that copy, but they still have to invoke it for each new paper.
 But…
 
 Zero cost solution:
