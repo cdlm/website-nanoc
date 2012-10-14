@@ -22,7 +22,7 @@ deploy:
   local:
     kind: rsync
     dst: localhost:/Users/damien/Sites/website-nanoc
-    options: &RSYNCOPTS [ --rsh=ssh, --archive, --delete-after, --verbose, --progress, --compress ]
+    options: &RSYNCOPTS [ --rsh=ssh, --archive, --delete-after, --verbose, --compress ]
   public:
     kind: rsync
     dst: ryu.zarb.org:/home/users/cdlm/vhosts/people.untyped.org/docroot/damien.pollet
