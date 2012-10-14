@@ -3,17 +3,23 @@ title: Home
 menu_title: About me
 ---
 <%= render 'partials/markdown_links' %>
-[![Logo USTL](/images/ustl-128.jpg){: .noframe}][ustl]
-[![Logo Telecom](/images/telecom-128.png){: .noframe}][telecom]
-[![Logo Inria](/images/inria-128.png){: .noframe}][inria]
-[![Pharo by Example cover](/images/pbe-128.jpg){: .framed}][pbe]
-{: .right}
-
 <% render "slidesjs/slideshow_bare", :style => 'width:128px;height:128px;', :class => 'left noframe' do %>
   <% items_by_identifier(%r{/images/faces/.*}).each do |i| %>
     <img class='slide' src="<%= relative_path_to i %>" title="<%= i[:title] %>" alt="Random portrait" width="128"/>
   <% end %>
 <% end %>
+
+[![Logo Inria](/images/inria-128.png){: .noframe}][inria]
+{: .right}
+
+[![Logo USTL](/images/ustl-128.jpg){: .noframe}][ustl]
+{: .right}
+
+[![Logo Telecom](/images/telecom-128.png){: .noframe}][telecom]
+{: .right}
+
+[![Pharo by Example cover](/images/pbe-128.jpg){: .framed}][pbe]
+{: .right}
 
 I am assistant professor (*Maître de conférences*) at the [university of Lille 1][ustl] ([UFR IEEA][ieea]) since september 2008.
 
