@@ -41,14 +41,15 @@ I received an engineering degree in computer science from [Insa][] in 2001, and 
 {ticker}
 %>
 
-###### Software evolves!
-Therefore, these pages are never complete, and always under constant refactoring and evolution… for some definition of *constant*.
-{: .banner}
 
+## [Contact Info](/contact/)
 
-## [Contact Info](contact.html)
-
-See my [detailed contact page](contact.html) for more info, the [access map](contact.html#map) to our offices, and my [agenda](contact.html#agenda).
+See my [detailed contact page](/contact/) for more info, the [access map](/contact/#map) to our offices, and my [agenda](/contact/#agenda).
 
 <%= render 'partials/contact_info' %>
+
+<div class="banner">
+  <h6>Software evolves!</h6>
+  <p>Therefore, these pages are never complete, and always under constant refactoring and evolution… for some definition of <em>constant</em>.</p>
+</div>
 
