@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 layout '*', :by_extension,
-  :haml => { format: :xhtml, ugly: true }
+  haml: { format: :xhtml, ugly: true }
 
 # do not generate partials, Sass includes, etc
 compile %r{/(_|README)} do end
@@ -27,13 +27,13 @@ preprocess do
 end
 
 # publications list from bibliography
-compile '/publications/DamienPollet/', :rep => :html do
+compile '/publications/DamienPollet/', rep: :html do
   filter :external,
-    :cmd => "bibhtmlize/bibhtmlize #{item[:content_filename]}",
-    :pipe_content => false 
+    cmd: "bibhtmlize/bibhtmlize #{item[:content_filename]}",
+    pipe_content: false
 end
 
-route '/publications/DamienPollet/', :rep => :html do  nil  end
+route '/publications/DamienPollet/', rep: :html do  nil  end
 
 # blog articles
 compile %r{/notes/\d\d\d\d/.*/} do
@@ -44,7 +44,7 @@ compile %r{/notes/\d\d\d\d/.*/} do
     filter :kramdown
     layout 'default'
     filter :rubypants
-    filter :relativize_paths, :type => :html
+    filter :relativize_paths, type: :html
   end
 end
 
@@ -56,16 +56,17 @@ compile '*' do
   when /(.+\.)?js/
     # filter :closure_compiler
   when 'sass'
-    filter :sass, :style => :compact
-    filter :relativize_paths, :type => :css
+    filter :sass, style: :compact
+    filter :relativize_paths, type: :css
   when 'erb', 'html', 'markdown'
     filter :erb
     filter :kramdown unless item[:extension] == 'erb'
-    layout 'default'
     filter :rubypants
-    filter :relativize_paths, :type => :html
+    layout 'default'
+    filter :relativize_paths, type: :html
   when 'feed', 'xml'
     filter :erb
+    # filter :relativize_paths, type: :xml
   end
 end
 
