@@ -83,7 +83,7 @@ module Blogging
     def yearly_archive_items
       years = entries_by_year
       return years.collect{ |y, es|
-        classification_item({y => es}, mtime(es), self[:archives_yearly], year: y)
+        classification_item({y => es}, mtime(es), self[:archives_yearly], single_year: y)
       }
     end
 

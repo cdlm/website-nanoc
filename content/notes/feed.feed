@@ -16,10 +16,10 @@ archives:
     title: Yearly archives
     menu_title: Archives
 archives_yearly:
-  identifier: /notes/%{year}/
-  layout: /articles_in_year/
+  identifier: /notes/%{single_year}/
+  layout: /articles_by_year/
   attributes:
-    title: Posted in %{year}
+    title: Posted in %{single_year}
 tags:
   identifier: /notes/tags/
   layout: /articles_by_tag/
