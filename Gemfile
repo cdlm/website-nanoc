@@ -13,3 +13,5 @@ gem 'sass'
 gem 'haml'
 gem 'nokogiri'
 gem 'rubypants'
+
+gem 'git' # deploy

@@ -10,18 +10,13 @@ hidden_extensions: [
   'js', 'coffee',
   'css', 'scss', 'sass', 'less' ]
 
-# output_dir: output
-output_dir: /Users/damien/Sites/nanoc
-# enable_output_diff: false
-# index_filenames: [ 'index.html' ]
-
 data_sources:
   - { type: filesystem_unified, items_root: /, layouts_root: /, allow_periods_in_identifiers: true }
 
 deploy:
-  local:
+  default:
     kind: rsync
-    dst: localhost:/Users/damien/Sites/website-nanoc
+    dst: staging/damien.pollet
     options: &RSYNCOPTS [ --rsh=ssh, --archive, --delete-after, --verbose, --compress ]
   public:
     kind: rsync
