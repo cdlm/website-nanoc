@@ -13,6 +13,9 @@ hidden_extensions: [
 data_sources:
   - { type: filesystem_unified, items_root: /, layouts_root: /, allow_periods_in_identifiers: true }
 
+prune:
+  auto_prune: true
+
 deploy:
   default:
     kind: rsync
