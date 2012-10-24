@@ -13,6 +13,8 @@ hidden_extensions: [
 data_sources:
   - { type: filesystem_unified, items_root: /, layouts_root: /, allow_periods_in_identifiers: true }
 
+output_dir: staging/damien.pollet
+
 prune:
   auto_prune: true
 
