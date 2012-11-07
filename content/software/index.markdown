@@ -27,7 +27,7 @@ Here are screenshots from my talk at [ESUG 2011, in Edinburgh][esug2011].
 ### Citezen
 A suite of tools for parsing, validating, sorting, and displaying [BibTeX databases][bibtex], integrated with [Pier][].
 
-[More details on Citezen here](./citezen.html).
+[More details on Citezen here](./citezen/).
 
 [bibtex]: http://www.bibtex.org
 [pier]: http://www.piercms.com
@@ -36,7 +36,7 @@ A suite of tools for parsing, validating, sorting, and displaying [BibTeX databa
 ### PetitMarkdown
 A parser and processor for [John Gruber's Markdown][markdown], written using [Lukas Renggli's PetitParser][petitparser]
 
-[More details on PetitMarkdown here](./petitmarkdown.html).
+[More details on PetitMarkdown here](./petitmarkdown/).
 
 [markdown]: http://daringfireball.net/projects/markdown/
 [petitparser]: http://scg.unibe.ch/research/helvetia/petitparser

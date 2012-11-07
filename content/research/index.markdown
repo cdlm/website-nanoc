@@ -107,7 +107,7 @@ National publications (in French):
 
 * October 13--16, [WCRE, Lille, France](http://web.soccerlab.polymtl.ca/wcre2009/)
 * August 31--September 4, [ESUG, Brest, France](http://esug.org/wiki/pier/Conferences/2009)
-* July 1--3, [TOOLS, Zürich, Swiss](http://tools.ethz.ch): conference [talk](http://slideshare) for the paper <a href="{relocatable: /publications}#Ducasse2009testTraits">_Reusing and Composing Tests with Traits_</a>
+* July 1--3, [TOOLS, Zürich, Swiss](http://tools.ethz.ch): conference [talk](http://slideshare) for the paper [_Reusing and Composing Tests with Traits_](/publications/#Ducasse2009testTraits)
 
 ###### 2008
 
@@ -120,7 +120,7 @@ National publications (in French):
 * August 25–31, [ESUG, Lugano, Swiss](http://esug.org/wiki/pier/Conferences/2007)
 * July 10, [University of Lugano](http://www.inf.unisi.ch/past_events.php?month_from=07&year_from=2007&month_to=07&year_to=2007&id=61): presentation of the Package Blueprint visualization
 * March 21–23, [CSMR, Amsterdam, Netherlands](http://www.cs.vu.nl/csmr2007): conference talk for the paper
-  <a href="{relocatable: /publications}#Pollet2007sarSoa">_Towards A Process-Oriented Software Architecture Reconstruction Taxonomy_</a>,
+  [_Towards A Process-Oriented Software Architecture Reconstruction Taxonomy_](/publications/#Pollet2007sarSoa),
   best paper award
 * March 13, [Inria, Bordeaux, France](http://www.labri.fr):
   presentation of my current works to the [Phoenix research group](http://phoenix.labri.fr)

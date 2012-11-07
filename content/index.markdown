@@ -29,7 +29,7 @@ and [research](/research/) on reengineering at [Inria][] within the [RMoD projec
 I'm a co-author of the open-source books [*Squeak by Example*][sbe] and [*Pharo by Example*][pbe].
 
 ##### Curriculum
-I received an engineering degree in computer science from [Insa][] in 2001, and obtained my Ph.D in 2005 from the [university of Rennes 1][rennes1], France ([details here](curriculum.html)).
+I received an engineering degree in computer science from [Insa][] in 2001, and obtained my Ph.D in 2005 from the [university of Rennes 1][rennes1], France ([details here](/curriculum/)).
 
 [ieea]: http://ieea.univ-lille1.fr "Unité de Formation et de Recherche d’Informatique, Électronique, Électrotechnique et Automatique"
 [insa]: http://www.insa-rennes.fr/?LangueID=2 "Institut National des Sciences Appliquées"
