@@ -9,9 +9,12 @@ gem 'w3c_validators' # nanoc check
 
 gem 'builder' # sitemap
 gem 'kramdown'
-gem 'sass'
 gem 'haml'
 gem 'nokogiri'
 gem 'rubypants'
+gem 'sass'
+# gem 'compass'
+# gem 'modular-scale'
+# gem 'susy'
 
 gem 'git' # deploy
