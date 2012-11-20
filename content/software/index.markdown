@@ -34,9 +34,13 @@ A suite of tools for parsing, validating, sorting, and displaying [BibTeX databa
 
 
 ### PetitMarkdown
-A parser and processor for [John Gruber's Markdown][markdown], written using [Lukas Renggli's PetitParser][petitparser]
 
-[More details on PetitMarkdown here](./petitmarkdown/).
+[→ repository](http://ss3.gemstone.com/ss/petitmarkdown.html)
+{: .right}
+
+A parser and processor for [John Gruber's Markdown][markdown], written using [Lukas Renggli's PetitParser][petitparser], in [Pharo][].
+
+<!-- [More details on PetitMarkdown here](./petitmarkdown/). -->
 
 [markdown]: http://daringfireball.net/projects/markdown/
 [petitparser]: http://scg.unibe.ch/research/helvetia/petitparser
@@ -44,7 +48,7 @@ A parser and processor for [John Gruber's Markdown][markdown], written using [Lu
 
 ### JOT LaTeX Document Class
 
-[&rarr; Github repository](https://github.com/jotfm/jot)
+[→ Github repository](https://github.com/jotfm/jot)
 {: .right}
 
 Typography and LaTeX document class for the [Journal of Object Technology (JOT)][jot], defining the new format for paper submissions.
