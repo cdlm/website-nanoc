@@ -21,7 +21,7 @@ menu_title: About me
 [![Pharo by Example cover](/images/pbe-128.jpg){: .framed}][pbe]
 {: .right}
 
-I am assistant professor (*Maître de conférences*) at the [university of Lille 1][ustl] ([UFR IEEA][ieea]) since september 2008.
+I am associate professor (*Maître de conférences*) at the [university of Lille 1][ustl] ([UFR IEEA][ieea]) since september 2008.
 
 I [teach](/teaching/) programming and software engineering at [Telecom Lille 1][telecom],
 and [research](/research/) on reengineering at [Inria][] within the [RMoD project-team][rmod].

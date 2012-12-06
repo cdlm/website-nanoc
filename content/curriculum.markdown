@@ -11,7 +11,7 @@ I'm still in the process of writing these pages.
 
 ## Current position
 
-### 2008--present: USTL, Lille (assistant professor)
+### 2008--present: USTL, Lille (associate professor)
 
 
 
