@@ -1,9 +1,9 @@
 source :rubygems
 
-gem 'nanoc'
+gem 'nanoc', '>= 3.5.0'
 gem 'rake'
 gem 'listen' # nanoc watch
-gem 'rb-fsevent', '~> 0.9.1' # for listen, else it polls
+gem 'rb-fsevent'
 gem 'systemu' # nanoc deploy
 gem 'w3c_validators' # nanoc check
 
