@@ -4,6 +4,8 @@ gem 'nanoc', '>= 3.5.0'
 gem 'rake'
 gem 'listen' # nanoc watch
 gem 'rb-fsevent'
+gem 'adsf' # nanoc view
+gem 'thin'
 gem 'systemu' # nanoc deploy
 gem 'w3c_validators' # nanoc check
 
