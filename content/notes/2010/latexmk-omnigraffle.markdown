@@ -63,6 +63,7 @@ My LaTeX pipeline of choice is PDFLaTeX; here are a few more options in `~/.late
     @default_files = ('main.tex');
 
 From top to bottom, these tell Latexmk:
+
 - to generate PDF via `pdflatex`, with some options to get better command-line behavior and to activate [SyncTeX][] for jumping between editor and previewer (PDFsync has some strange interactions with style files we use);
 - to open the generated PDF file the Mac way (I'm using [Skim][], for SyncTeX support);
 - to include the SyncTeX file in the garbage when cleaning (`latexmk -C`).
