@@ -1,4 +1,4 @@
-source :rubygems
+source 'https://rubygems.org'
 
 gem 'nanoc', '>= 3.5.0'
 gem 'rake'
