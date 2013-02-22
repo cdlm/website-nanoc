@@ -8,6 +8,7 @@ gem 'adsf' # nanoc view
 gem 'thin'
 gem 'systemu' # nanoc deploy
 gem 'w3c_validators' # nanoc check
+gem 'chronic' # nanoc create-post
 
 gem 'builder' # sitemap
 gem 'kramdown'
