@@ -7,12 +7,12 @@ class ByExtension < Nanoc3::Filter
         filter_id, options = assigns[:layout][:filter] || assigns[:layout][:extension]
         filter_id = filter_id.to_sym
 
-        filter = Nanoc3::Filter.named(filter_id)
+        filter = Nanoc::Filter.named(filter_id)
         if filter.nil? or filter.from_binary? or filter.to_binary?
-            raise Nanoc3::Errors::CannotDetermineFilter.new(filter_id)
+            raise Nanoc::Errors::CannotDetermineFilter.new(filter_id)
         end
 
-        filter.new(@assigns).run(content, params.fetch(filter_id, {}).merge(options || {}))
+        filter.new(@assigns).setup_and_run(content, params.fetch(filter_id, {}).merge(options || {}))
     end
 
 end

@@ -3,7 +3,7 @@ title: Home
 menu_title: About me
 ---
 <%= render 'partials/markdown_links' %>
-<% render "slidesjs/slideshow_bare", :style => 'width:128px;height:128px;', :class => 'left noframe' do %>
+<% render "slidesjs/slideshow_bare", style: 'width:128px;height:128px;', css_class: 'left noframe' do %>
   <% items_by_identifier(%r{/images/faces/.*}).each do |i| %>
     <img class='slide' src="<%= relative_path_to i %>" title="<%= i[:title] %>" alt="Random portrait" width="128"/>
   <% end %>
