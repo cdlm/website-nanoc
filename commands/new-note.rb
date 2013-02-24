@@ -61,7 +61,7 @@ ___
     end
 
     def check_available_identifier candidate
-      unless self.site.items.find { |i| i.identifier == candidate }.nil?
+      unless self.site.items[candidate].nil?
         raise Nanoc::Errors::GenericTrivial,
           "A post already exists at #{candidate}. Please specify a different slug."
       end

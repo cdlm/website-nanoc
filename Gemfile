@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'nanoc', '>= 3.5.0'
+gem 'nanoc', '>= 3.6.0'
 gem 'rake'
 gem 'listen' # nanoc watch
 gem 'rb-fsevent'
@@ -21,3 +21,8 @@ gem 'sass'
 # gem 'susy'
 
 gem 'git' # deploy
+
+group :development do
+  gem 'pry'
+  gem 'pry-debugger'
+end

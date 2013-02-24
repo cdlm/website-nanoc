@@ -1,22 +1,31 @@
 # -*- encoding : utf-8 -*-
 module Blogging
 
+  # Convenience
+  class Nanoc::Item
+    def feed?
+       self[:kind] == 'feed' || self[:extension] == 'feed'
+    end
+  end
+
   ## Content helpers
 
   def article_image(item)
-    item_named item[:image]
+    image_id = item[:image] and item_named image_id
   end
 
   ## Preprocessing stage
   def all_feeds
-    feed_items = @items.select { |i|
-      i[:kind] == 'feed' or i[:extension] == 'feed'
-    }
-    feed_items.collect { |i| Feed.new(@site, i) }
+    Enumerator.new do |feeds|
+      @items.each do |i|
+        feeds << Feed.new(@site, i) if i.feed?
+      end
+    end
   end
 
   def feed_named(id)
-    all_feeds.find { |f| f.identifier == id }
+    item = @items[id] and item.feed? or return nil
+    Feed.new(@site, item)
   end
 
 
@@ -29,17 +38,11 @@ module Blogging
       # TODO validate root
     end
 
-    def identifier()  @root.identifier  end
-
-    def [](key)  @root[key]  end
-
-    def []=(key, value)  @root[key] = value  end
-
     def entries
       return @entries unless @entries.nil?
 
-      pattern = /^#{ @root[:entries] }$/
-      @entries = @site.items.select { |i| pattern =~ i.identifier}
+      pattern = /^#{ @root[:entries_pattern] }$/
+      @entries = @site.items.select { |i| pattern =~ i.identifier }
       @entries.sort_by! { |i| i[:created_at] || raise(RuntimeError, i.identifier) }
       return @entries
     end
@@ -65,25 +68,25 @@ module Blogging
 
     def set_info
       entries.each do |e|
-        e.attributes.update(self[:entries_info])
+        e.attributes.update(@root[:entries_info])
       end
     end
 
     def generate
-      @site.items << archive_item unless self[:archives].nil?
-      @site.items.concat yearly_archive_items unless self[:archives_yearly].nil?
-      @site.items << tag_item unless self[:tags].nil?
+      @site.items << archive_item unless @root[:archives].nil?
+      @site.items.concat yearly_archive_items unless @root[:archives_yearly].nil?
+      @site.items << tag_item unless @root[:tags].nil?
     end
 
     def archive_item
       contents = entries_by_year
-      return classification_item(contents, mtime, self[:archives])
+      return classification_item(contents, mtime, @root[:archives])
     end
 
     def yearly_archive_items
       years = entries_by_year
       return years.collect{ |y, es|
-        classification_item({y => es}, mtime(es), self[:archives_yearly], single_year: y)
+        classification_item({y => es}, mtime(es), @root[:archives_yearly], single_year: y)
       }
     end
 
@@ -92,7 +95,7 @@ module Blogging
       unsorted_tags.keys.sort.each do |t|
         contents[t] = unsorted_tags[t]
       end
-      return classification_item(contents, mtime, self[:tags])
+      return classification_item(contents, mtime, @root[:tags])
     end
 
     def classified_entries(reverse=true, &block)
@@ -121,7 +124,7 @@ module Blogging
         attributes[k] = v % args
       end
 
-      return Nanoc3::Item.new(
+      return Nanoc::Item.new(
         "<%= render '#{options[:layout]}' %>",
         attributes,
         options[:identifier] % args)

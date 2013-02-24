@@ -4,7 +4,7 @@ subtitle: the art of computer procrastinating
 description: >
   Random articles not completely unrelated
   to research, objects, and programming languages.
-entries: /notes/[0-9][0-9][0-9][0-9]/[^/]+/
+entries_pattern: /notes/[0-9][0-9][0-9][0-9]/[^/]+/
 entries_info: # merged into metadata of entries
   tag_base_url: /notes/tags/#
 archives:

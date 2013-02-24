@@ -3,6 +3,7 @@
 # before nanoc starts compiling.
 
 require 'nokogiri'
+require 'sass' # https://github.com/nanoc/nanoc/pull/241
 
 include Nanoc::Helpers::Blogging
 include Nanoc::Helpers::Capturing
@@ -64,7 +65,7 @@ def ancestor_link_unless_current(title, destination)
 end
 
 def item_named(id)
-  items.find { |i| i.identifier == id }
+  items[id] # since nanoc 3.6.0
 end
 
 def items_by_identifier(pattern)

@@ -3,8 +3,7 @@ layout '*', :by_extension,
   haml: { format: :xhtml, ugly: true }
 
 # do not generate partials, Sass includes, etc
-compile %r{/(_|README)} do end
-route %r{/(_|README)} do  nil  end
+ignore %r{/(_|README)}
 
 # blog articles
 preprocess do
