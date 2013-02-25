@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 
-class ClosureCompiler < Nanoc3::Filter
+class ClosureCompiler < Nanoc::Filter
   identifier :closure_compiler
   
   def run(content, params={})

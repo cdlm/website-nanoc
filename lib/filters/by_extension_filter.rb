@@ -1,5 +1,5 @@
 # -*- encoding : utf-8 -*-
-class ByExtension < Nanoc3::Filter
+class ByExtension < Nanoc::Filter
     identifier :by_extension
     type :text
 

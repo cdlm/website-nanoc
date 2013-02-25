@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 usage 'create-post [options] title [slug]'
 aliases :note, :post
 summary 'create a blog post'

@@ -7,7 +7,7 @@ module TaggingExtra
 
   def create_tag_pages(partial, title_prefix, identifier_prefix)
     tag_set(items).each do |tag|
-      items << Nanoc3::Item.new(
+      items << Nanoc::Item.new(
         "= render('#{partial}', :tag => '#{tag}')", # use locals to pass data
         { :title => "#{title_prefix}#{tag}", :is_hidden => true}, # do not include in sitemap.xml
         "#{identifier_prefix}#{tag}/",                                     # identifier
