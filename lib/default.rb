@@ -3,7 +3,6 @@
 # before nanoc starts compiling.
 
 require 'nokogiri'
-require 'sass' # https://github.com/nanoc/nanoc/pull/241
 
 include Nanoc::Helpers::Blogging
 include Nanoc::Helpers::Capturing
