@@ -4,7 +4,7 @@ class External < Nanoc::Filter
   identifier :external
   
   def run(content, params={})
-    raise ArgumentError, "External filter requires a :cmd argument which is missing" if params[:cmd].nil?
+    raise ArgumentError, "External filter requires a :cmd argument" if params[:cmd].nil?
     IO.popen(params[:cmd], 'r+') do |io|
       if params.fetch(:pipe_content, true)
         io.write content
