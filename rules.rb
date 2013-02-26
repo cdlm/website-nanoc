@@ -1,17 +1,15 @@
 # -*- encoding : utf-8 -*-
-layout '*', :by_extension,
-  haml: { format: :xhtml, ugly: true }
 
-# do not generate partials, Sass includes, etc
-ignore %r{/(_|README)}
-
-# blog articles
 preprocess do
+
+  # setup blog items
   all_feeds.each do |feed|
     feed.chain_entries
     feed.set_info
     feed.generate
   end
+
+  # sitemap
   hide_items do |item|
     case item.identifier
     when %r{/publications/\d\d\d\d/.*}
@@ -25,10 +23,16 @@ preprocess do
   create_sitemap
 end
 
+layout '*', :by_extension,
+  haml: { format: :xhtml, ugly: true }
+
+# do not generate partials, Sass includes, etc
+ignore %r{/(_|README)}
+
 # publications list from bibliography
 compile '/publications/DamienPollet/', rep: :html do
   filter :external,
-    cmd: "bibhtmlize/bibhtmlize #{item[:content_filename]}",
+    cmd: [ 'bibhtmlize/bibhtmlize', item[:content_filename] ],
     pipe_content: false
 end
 
