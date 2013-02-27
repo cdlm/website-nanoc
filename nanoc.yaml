@@ -27,6 +27,9 @@ deploy:
     kind: rsync
     dst: ryu.zarb.org:/home/users/cdlm/vhosts/people.untyped.org/docroot/damien.pollet
     options: *RSYNCOPTS
+  github:
+    kind: git
+    working_dir: staging
 
 base_url: &BASE http://people.untyped.org/damien.pollet
 author_uri: *BASE
