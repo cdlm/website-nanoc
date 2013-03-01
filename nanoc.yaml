@@ -1,3 +1,4 @@
+encoding: utf-8
 text_extensions: [
   'bib', 'php', 'rb', 'js',
   'css', 'less', 'sass', 'scss',
