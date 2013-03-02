@@ -277,38 +277,44 @@ strong.marker
   margin-right: 1em
 
 #header
-  margin: 0 -1.5em 1ex 0
+  margin: 0 -2em 1ex -2em
   h1
     float: left
+    margin: 0 1em
     font-size: 200%
+    font-weight: 100
+    text-transform: uppercase
+    letter-spacing: 0.15em
     a
-      color: black
+      color: mix(black, $body_color, 60%)
   #tagline
     float: right
     text-align: right
-    margin-left: 9ex
+    margin: 0 2em 0 5em
 
 #menu
-  margin: 1ex -1ex -1ex -1ex
-  padding: 0
-  float: left
+  margin: 1ex 0 -1.5ex 0
+  padding: 0 2em
+  background: white
+  border-top-left-radius: 0.5em
+  border-top-right-radius: 0.5em
+  // float: left
   ul
     display: block
     list-style: none
-    margin: 0
+    margin: 0 -1.5ex
     padding: 0
   li
     display: inline-block
-    margin: 0 1ex 0 0
+    margin: 0 0.5ex
   span, a
     display: inline-block
-    padding: 0.5ex 1ex 1.2ex 1ex
-    margin-bottom: -1ex
-    color: black
+    padding: 0.9ex 1ex 0.5ex 1ex
+    color: hsl(0,0,lightness($headings_color))
   .active
-    padding-bottom: 0.2ex
-    border-bottom: 1ex solid $headings_color
-    color: white
+    padding-top: 0
+    border-top: 1ex solid $headings_color
+    color: $headings_color
 
 #langbar
   margin: 1.5ex 0 -2ex 0
