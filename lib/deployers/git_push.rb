@@ -1,8 +1,29 @@
 # -*- encoding : utf-8 -*-
 
+# A deployer that pushes the compiled site using git.
+#
+# The path to the root of the git working directory should be specified in the
+# deployment configuration, using the `working_dir` value (which defaults to
+# the same as nanoc's `output_dir`).  This deployer will simply commit all
+# changes to the files there, including new and removed files, then push to the
+# default upstream branch.
+#
+# The user should ensure that `working_dir` points to a git working repository
+# (i.e. containing `.git`), and that the branch tracking is set up so that it
+# can be pushed without arguments (a simple `git push` should work).
+#
+# @example A deployment configuration using the `:git` deployer
+#   deploy:
+#     public:
+#       kind: git
+#       working_dir: output
+#
+# @todo Specify commit branch, commit message template, and push refspec.
+# @author Damien Pollet
 class GitPush < Nanoc::Extra::Deployer
   identifier :git
 
+  # @see Nanoc::Extra::Deployer#run
   def run
     require 'git'
 
