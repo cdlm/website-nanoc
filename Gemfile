@@ -2,8 +2,7 @@ source 'https://rubygems.org'
 
 gem 'nanoc', '>= 3.6.0'
 gem 'rake'
-gem 'listen' # nanoc watch
-gem 'rb-fsevent'
+gem 'guard-nanoc'
 gem 'adsf' # nanoc view
 gem 'thin'
 gem 'systemu' # nanoc deploy
