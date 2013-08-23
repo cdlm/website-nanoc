@@ -12,7 +12,7 @@ menu_title: About me
 [![Logo Inria](/images/inria-128.png){: .noframe}][inria]
 {: .right}
 
-[![Logo USTL](/images/ustl-128.jpg){: .noframe}][ustl]
+[![Logo Lille 1](/images/lille1-128.jpg){: .noframe}][lille1]
 {: .right}
 
 [![Logo Telecom](/images/telecom-128.png){: .noframe}][telecom]
@@ -21,10 +21,10 @@ menu_title: About me
 [![Pharo by Example cover](/images/pbe-128.jpg){: .framed}][pbe]
 {: .right}
 
-I am associate professor (*Maître de conférences*) at the [university of Lille 1][ustl] ([UFR IEEA][ieea]) since september 2008.
+I am associate professor (*Maître de conférences*) of the [UFR IEEA][ieea] at [university of Lille 1][lille1] since september 2008, and am affiliated with the [Laboratoire d'Informatique Fondamentale de Lille (LIFL)][lifl], the joint laboratory between [Lille 1][lille1], [Lille 3][lille3], [CNRS][], and [Inria][].
 
 I [teach](/teaching/) programming and software engineering at [Telecom Lille 1][telecom],
-and [research](/research/) on reengineering at [Inria][] within the [RMoD project-team][rmod].
+and [research](/research/) on programming languages and reengineering within the [RMoD project-team][rmod] of [Inria][].
 
 I'm a co-author of the open-source books [*Squeak by Example*][sbe] and [*Pharo by Example*][pbe].
 
