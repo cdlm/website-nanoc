@@ -35,7 +35,7 @@ A suite of tools for parsing, validating, sorting, and displaying [BibTeX databa
 
 ### PetitMarkdown
 
-[→ repository](http://ss3.gemstone.com/ss/petitmarkdown.html)
+[→ repository](http://smalltalkhub.com/#!/~dh83/petitmarkdown)
 {: .right}
 
 A parser and processor for [John Gruber's Markdown][markdown], written using [Lukas Renggli's PetitParser][petitparser], in [Pharo][].

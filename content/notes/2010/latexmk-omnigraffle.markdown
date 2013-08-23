@@ -73,10 +73,10 @@ The last line specifies that the document to compile is often named `main.tex`, 
 _Happy LaTeXing!_
 
 
-[graffle2pdf]: http://code.untyped.org/gitweb/gitweb.cgi?p=infrastructure.git;a=blob;f=tools/graffle2pdf "graffle2pdf"
+[graffle2pdf]: https://github.com/cdlm/infrastructure/blob/master/tools/graffle2pdf "graffle2pdf"
 [make]: http://www.gnu.org/software/make/ "GNU Make"
 [moreRules]: http://ctan.tug.org/tex-archive/support/latexmk/example_rcfiles/
 [synctex]: http://en.foursenses.net/usingsynctex
 [skim]: http://skim-app.sourceforge.net/
 [^lmk]: In fact I have a shell alias that shortens that to just `lmk` :-)
-[^beware]: Beware, the script contains a couple Unicode chevrons (`«class ppth»`) that gitweb garbles in the [raw view](http://code.untyped.org/gitweb/gitweb.cgi?p=infrastructure.git;a=blob_plain;f=tools/graffle2pdf); they are correct in the [blob view][graffle2pdf].
+[^beware]: Beware, the script contains a couple Unicode chevrons (`«class ppth»`) that will prevent execution if the encoding gets garbled.

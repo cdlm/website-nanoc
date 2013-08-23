@@ -28,8 +28,8 @@ Software change, logical coupling
 [unisi]: http://www.unisi.ch "Università della Svizzera Italiana"
 [lanza]: http://www.inf.unisi.ch/faculty/lanza/
 [marco]: http://www.inf.unisi.ch/phd/dambros/
-[mircea]: http://www.inf.unisi.ch/phd/lungu/
-[romain]: http://www.inf.unisi.ch/phd/robbes/
+[mircea]: http://scg.unibe.ch/staff/mircea
+[romain]: http://users.dcc.uchile.cl/~rrobbes
 [ricky]: http://www.inf.unisi.ch/phd/wettel/
 
 
