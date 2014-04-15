@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'nanoc', '>= 3.6.0'
+gem 'cri' #, '~> 2.3.0'
 gem 'rake'
 gem 'guard-nanoc'
 gem 'adsf' # nanoc view
