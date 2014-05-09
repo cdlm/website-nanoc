@@ -24,5 +24,5 @@ gem 'git' # deploy
 
 group :development do
   gem 'pry'
-  gem 'pry-debugger'
+  # gem 'pry-debugger'
 end
