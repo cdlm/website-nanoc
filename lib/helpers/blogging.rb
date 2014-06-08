@@ -59,8 +59,8 @@ module Blogging
       prev = nil
       entries.each do |current|
         unless prev.nil?
-          prev[:next] = current
-          current[:prev] = prev
+          prev[:next] = current.identifier
+          current[:prev] = prev.identifier
         end
         prev = current
       end

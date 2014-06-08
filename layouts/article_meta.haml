@@ -5,13 +5,15 @@
       in
       = tags_for @item, base_url: info(:tag_base_url)
   %span.previous>
-    - if @item[:prev].nil?
+    - prev_id = @item[:prev]
+    - if prev_id.nil?
       (oldest)
     - else
-      = link_to "&larr;&nbsp;previous", @item[:prev]
+      = link_to "&larr;&nbsp;previous", @items[prev_id]
   %span.next>
-    - if @item[:next].nil?
+    - next_id = @item[:next]
+    - if next_id.nil?
       (newest)
     - else
-      = link_to "next&nbsp;&rarr;", @item[:next]
+      = link_to "next&nbsp;&rarr;", @items[next_id]
 
