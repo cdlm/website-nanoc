@@ -2,7 +2,7 @@
 title: A better Qwerty layout for accents
 created_at: 2010-04-17
 image: /notes/images/keyboard/
-tags: [usability, hack]
+tags: [usability, hack, esperanto]
 ---
 <% excerpt :summary do %>
 Like many programmers whose main language is not English, I've been facing the keyboard dilemma for a while:
