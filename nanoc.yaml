@@ -19,19 +19,6 @@ output_dir: staging/damien.pollet
 prune:
   auto_prune: true
 
-deploy:
-  default:
-    kind: rsync
-    dst: staging/damien.pollet
-    options: &RSYNCOPTS [ --rsh=ssh, --archive, --delete-after, --verbose, --compress ]
-  public:
-    kind: rsync
-    dst: ryu.zarb.org:/home/users/cdlm/vhosts/people.untyped.org/docroot/damien.pollet
-    options: *RSYNCOPTS
-  github:
-    kind: git
-    working_dir: staging
-
 base_url: &BASE http://people.untyped.org/damien.pollet
 author_uri: *BASE
 
