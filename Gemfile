@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'nanoc', '>= 3.6.0'
-gem 'rake'
+gem 'nanoc', '~> 4.0.0b2'
 gem 'guard-nanoc'
 gem 'adsf' # nanoc view
 gem 'thin'
@@ -23,5 +22,5 @@ gem 'git' # deploy
 
 group :development do
   gem 'pry'
-  # gem 'pry-debugger'
+  gem 'pry-byebug'
 end
