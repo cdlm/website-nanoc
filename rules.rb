@@ -17,7 +17,7 @@ preprocess do
     when /404|500|htaccess/, %r{/(scripts|stylesheets)/.*}
       true
     else
-      item.binary? || @site.config[:hidden_extensions].include?(item[:extension])
+      item.binary? || @config[:hidden_extensions].include?(item[:extension])
     end
   end
   create_sitemap
