@@ -68,7 +68,10 @@ module Blogging
 
     def set_info
       entries.each do |e|
-        e.attributes.update(@root[:entries_info])
+        # e.attributes.update(@root[:entries_info])
+        @root[:entries_info].each do |attribute, value|
+          e[attribute] = value
+        end
       end
     end
 
