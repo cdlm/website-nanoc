@@ -18,21 +18,21 @@ module Blogging
   def all_feeds
     Enumerator.new do |feeds|
       @items.each do |i|
-        feeds << Feed.new(@site, i) if i.feed?
+        feeds << Feed.new(@items, i) if i.feed?
       end
     end
   end
 
   def feed_named(id)
     item = @items[id] and item.feed? or return nil
-    Feed.new(@site, item)
+    Feed.new(@items, item)
   end
 
 
   class Feed
 
-    def initialize(site, root)
-      @site = site
+    def initialize(site_items, root)
+      @site_items = site_items
       @root = root
       @entries = nil
       # TODO validate root
@@ -42,7 +42,7 @@ module Blogging
       return @entries unless @entries.nil?
 
       pattern = /^#{ @root[:entries_pattern] }$/
-      @entries = @site.items.select { |i| pattern =~ i.identifier }
+      @entries = @site_items.select { |i| pattern =~ i.identifier }
       @entries.sort_by! { |i| i[:created_at] || raise(RuntimeError, i.identifier) }
       return @entries
     end
@@ -73,9 +73,9 @@ module Blogging
     end
 
     def generate
-      @site.items << archive_item unless @root[:archives].nil?
-      @site.items.concat yearly_archive_items unless @root[:archives_yearly].nil?
-      @site.items << tag_item unless @root[:tags].nil?
+      @site_items << archive_item unless @root[:archives].nil?
+      @site_items.concat yearly_archive_items unless @root[:archives_yearly].nil?
+      @site_items << tag_item unless @root[:tags].nil?
     end
 
     def archive_item
