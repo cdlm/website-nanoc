@@ -76,29 +76,29 @@ module Blogging
     end
 
     def generate
-      @site_items << archive_item unless @root[:archives].nil?
-      @site_items.concat yearly_archive_items unless @root[:archives_yearly].nil?
-      @site_items << tag_item unless @root[:tags].nil?
+      create_archive_item unless @root[:archives].nil?
+      create_yearly_archive_items unless @root[:archives_yearly].nil?
+      create_tag_item unless @root[:tags].nil?
     end
 
-    def archive_item
+    def create_archive_item
       contents = entries_by_year
-      return classification_item(contents, mtime, @root[:archives])
+      create_classification_item(contents, mtime, @root[:archives])
     end
 
-    def yearly_archive_items
+    def create_yearly_archive_items
       years = entries_by_year
-      return years.collect{ |y, es|
-        classification_item({y => es}, mtime(es), @root[:archives_yearly], single_year: y)
-      }
+      years.each do |y, es|
+        create_classification_item({y => es}, mtime(es), @root[:archives_yearly], single_year: y)
+      end
     end
 
-    def tag_item
+    def create_tag_item
       contents, unsorted_tags = {}, classified_entries{ |e| e[:tags] }
       unsorted_tags.keys.sort.each do |t|
         contents[t] = unsorted_tags[t]
       end
-      return classification_item(contents, mtime, @root[:tags])
+      create_classification_item(contents, mtime, @root[:tags])
     end
 
     def classified_entries(reverse=true, &block)
@@ -116,7 +116,7 @@ module Blogging
       return result
     end
 
-    def classification_item(contents, mtime, options, args={})
+    def create_classification_item(contents, mtime, options, args={})
       attributes = {
         contents: contents,
         mtime: mtime,
@@ -127,7 +127,7 @@ module Blogging
         attributes[k] = v % args
       end
 
-      return Nanoc::Item.new(
+      @site_items.create(
         "<%= render '#{options[:layout]}' %>",
         attributes,
         options[:identifier] % args)
