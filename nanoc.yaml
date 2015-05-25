@@ -12,10 +12,10 @@ hidden_extensions: [
   'css', 'scss', 'sass', 'less' ]
 
 data_sources:
-  - { type: filesystem_unified, items_root: /, layouts_root: /, allow_periods_in_identifiers: true }
+  - { type: filesystem_unified, items_root: /, layouts_root: / }
 
 output_dir: staging/damien.pollet
-
+enable_output_diff: true
 prune:
   auto_prune: true
 
