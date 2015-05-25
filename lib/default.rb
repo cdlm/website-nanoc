@@ -23,7 +23,7 @@ end
 # Attribute lookup
 def info(key, item=nil)
   item ||= @item
-  item.attributes.fetch(key) do
+  item.fetch(key) do
     if item.parent.nil?
       @config[:default_info].fetch(key){ @config[key] }
     else
