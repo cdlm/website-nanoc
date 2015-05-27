@@ -1,4 +1,5 @@
 .sass-cache/
+output.diff
 output/
-tmp/
 staging
+tmp/
