@@ -36,41 +36,40 @@ compile '/publications/*.bib', rep: :html do
     pipe_content: false
 end
 
-route '/publications/*.bib', rep: :html do  nil  end
+route '/publications/*.bib', rep: :html do  nil  end # FIXME
 
 # blog articles
 ignore '/notes/**/*'
-compile %r{/notes/\d\d\d\d/.*/} do
-  case item[:extension]
-  when 'html', 'markdown'
-    filter :erb
-    filter :kramdown
-    filter :rubypants
-    layout '/article.*'
-    filter :relativize_paths, type: :html
-  end
+compile %r{/notes/\d\d\d\d/.*\.(html|markdown)$/} do
+  filter :erb
+  filter :kramdown
+  filter :rubypants
+  layout '/article.*'
+  filter :relativize_paths, type: :html
+end
+
+compile '/**/*.sass' do
+  filter :sass, style: :compact
+  filter :relativize_paths, type: :css
+end
+
+compile '/**/*.{erb,html,markdown}' do
+  filter :erb
+  filter :kramdown unless item[:extension] == 'erb'
+  filter :rubypants
+  layout '/default.*'
+  filter :relativize_paths, type: :html
+end
+
+compile '/**/*.{feed,xml}' do
+  filter :erb
+  # filter :relativize_paths, type: :xml
 end
 
 # default pipeline & routing
 compile '/**/*' do
-  case item[:extension]
-  when 'bib'
-    # TODO filter out the BibDesk noise
-  when /(.+\.)?js/
-    # filter :closure_compiler
-  when 'sass'
-    filter :sass, style: :compact
-    filter :relativize_paths, type: :css
-  when 'erb', 'html', 'markdown'
-    filter :erb
-    filter :kramdown unless item[:extension] == 'erb'
-    filter :rubypants
-    layout '/default.*'
-    filter :relativize_paths, type: :html
-  when 'feed', 'xml'
-    filter :erb
-    # filter :relativize_paths, type: :xml
-  end
+  # TODO *.bib: filter out the BibDesk noise
+  # *.js: filter :closure_compiler
 end
 
 route '/**/*' do

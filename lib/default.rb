@@ -14,10 +14,7 @@ include Nanoc::Helpers::Tagging
 # Route by setting the extension
 def extension(ext=nil, opts={})
   e = ext || item[:extension] || ''
-  e = ".#{e}" unless e.empty?
-  id = item.identifier.chop
-  id += "/index" if opts[:as_index] || id.empty?
-  id + e
+  item.identifier.with_ext e
 end
 
 # Attribute lookup
