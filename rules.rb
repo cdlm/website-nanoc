@@ -39,6 +39,7 @@ end
 route '/publications/DamienPollet/', rep: :html do  nil  end
 
 # blog articles
+ignore '/notes/**/*'
 compile %r{/notes/\d\d\d\d/.*/} do
   case item[:extension]
   when 'html', 'markdown'
