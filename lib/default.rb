@@ -64,7 +64,7 @@ def ancestor_link_unless_current(title, destination)
 end
 
 def item_named(id)
-  items[id] # since nanoc 3.6.0
+  @items[id] # since nanoc 3.6.0
 end
 
 def items_by_identifier(pattern)
