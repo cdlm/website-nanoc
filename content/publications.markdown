@@ -11,7 +11,7 @@ If needed, please also refer to [DBLP](http://www.informatik.uni-trier.de/~ley/d
 {: .right}
 
 
-<%= item_named('/publications/DamienPollet/').compiled_content(:rep => :html) %>
+<%= item_named('/publications/DamienPollet.bib').compiled_content(:rep => :html) %>
 
 
 <%#

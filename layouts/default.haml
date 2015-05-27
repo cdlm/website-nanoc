@@ -40,14 +40,14 @@
       = clear
 
     #pagebottom<
-      = render "partials/footer"
+      = render "/partials/footer.*"
       %a.hide{:href => "#pagetop", :accesskey => "1"} Back to top
 
     %script{:type => "text/javascript", :src => "http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"}
     %script{:type => "text/javascript", :src => "/scripts/footnotes.js"}
-    = render "slidesjs/setup"
-    = render "setup/hyphenator"
+    = render "/slidesjs/setup.*"
+    = render "/setup/hyphenator.*"
     -# render "setup/mathjax"
     -# = render "setup/konami"
-    = render "setup/google_analytics"
+    = render "/setup/google_analytics.*"
 

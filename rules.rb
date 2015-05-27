@@ -23,20 +23,20 @@ preprocess do
   create_sitemap
 end
 
-layout '*', :by_extension,
+layout '/**/*', :by_extension,
   haml: { format: :xhtml, ugly: true }
 
 # do not generate partials, Sass includes, etc
 ignore %r{/(_|README)}
 
 # publications list from bibliography
-compile '/publications/DamienPollet/', rep: :html do
+compile '/publications/*.bib', rep: :html do
   filter :external,
     cmd: [ 'bibhtmlize/bibhtmlize', item[:content_filename] ],
     pipe_content: false
 end
 
-route '/publications/DamienPollet/', rep: :html do  nil  end
+route '/publications/*.bib', rep: :html do  nil  end
 
 # blog articles
 ignore '/notes/**/*'
@@ -46,13 +46,13 @@ compile %r{/notes/\d\d\d\d/.*/} do
     filter :erb
     filter :kramdown
     filter :rubypants
-    layout 'article'
+    layout '/article.*'
     filter :relativize_paths, type: :html
   end
 end
 
 # default pipeline & routing
-compile '*' do
+compile '/**/*' do
   case item[:extension]
   when 'bib'
     # TODO filter out the BibDesk noise
@@ -65,7 +65,7 @@ compile '*' do
     filter :erb
     filter :kramdown unless item[:extension] == 'erb'
     filter :rubypants
-    layout 'default'
+    layout '/default.*'
     filter :relativize_paths, type: :html
   when 'feed', 'xml'
     filter :erb
@@ -73,7 +73,7 @@ compile '*' do
   end
 end
 
-route '*' do
+route '/**/*' do
   case item[:extension]
   when 'sass'
     extension 'css'

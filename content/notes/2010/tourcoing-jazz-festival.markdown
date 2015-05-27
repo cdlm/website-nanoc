@@ -15,7 +15,7 @@ This year it was from Oct. 16th to 23rd, and I suspect whoever invited the artis
 
 ## Saturday: Renaud García-Fons
 
-[<%= img '/notes/2010/tourcoing-jazz-festival/la-linea-del-sur/', alt: 'Renaud García-Fons, La Línea del Sur (2009)' %>][linea]{: .right}
+[<%= img '/notes/2010/tourcoing-jazz-festival/la-linea-del-sur.jpg', alt: 'Renaud García-Fons, La Línea del Sur (2009)' %>][linea]{: .right}
 
 The festival opened with a concert in Mouscron, near Tourcoing, but on the belgian side of the border, where 5km are more than enough for a poor french driver to get lost…
 

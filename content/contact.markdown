@@ -1,11 +1,11 @@
 ---
 title: Contact
 ---
-<%= render 'partials/markdown_links' %>
+<%= render '/partials/markdown_links.*' %>
 
 # Contact Info
 
-<%= render 'partials/contact_info' %>
+<%= render '/partials/contact_info.*' %>
 
 
 <div id="map" class="highlight">

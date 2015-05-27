@@ -2,7 +2,7 @@
 title: Research Activities
 menu_title: Research
 ---
-<%= render 'partials/markdown_links' %>
+<%= render '/partials/markdown_links.*' %>
 
 # <%= @item[:title] %>
 

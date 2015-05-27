@@ -1,7 +1,7 @@
 ---
 title: PetitMarkdown
 ---
-<%= render 'partials/markdown_links' %>
+<%= render '/partials/markdown_links.*' %>
 
 # <%= @item[:title] %>
 

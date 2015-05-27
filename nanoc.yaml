@@ -43,11 +43,11 @@ default_info:
     virtual machines,
     object-oriented
   header_menu:
-    - /publications/
-    - /research/
-    - /teaching/
-    - /software/
-    - /curriculum/
-    - /contact/
+    - /publications.*
+    - /research/index.*
+    - /teaching/index.*
+    - /software/index.*
+    - /curriculum.*
+    - /contact.*
     # - /notes/index.*
 

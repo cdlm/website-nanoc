@@ -2,8 +2,8 @@
 title: Home
 menu_title: About me
 ---
-<%= render 'partials/markdown_links' %>
-<% render "slidesjs/slideshow_bare", style: 'width:128px;height:128px;', css_class: 'left noframe' do %>
+<%= render '/partials/markdown_links.*' %>
+<% render "/slidesjs/slideshow_bare.*", style: 'width:128px;height:128px;', css_class: 'left noframe' do %>
   <% items_by_identifier(%r{/images/faces/.*}).each do |i| %>
     <img class='slide' src="<%= relative_path_to i %>" title="<%= i[:title] %>" alt="Random portrait" width="128"/>
   <% end %>
@@ -52,7 +52,7 @@ I received an engineering degree in computer science from [Insa][] in 2001, and 
 
 See my [detailed contact page](/contact/) for more info, the [access map](/contact/#map) to our offices, and my [agenda](/contact/#agenda).
 
-<%= render 'partials/contact_info' %>
+<%= render '/partials/contact_info.*' %>
 
 <div class="banner">
   <h6>Software evolves!</h6>
