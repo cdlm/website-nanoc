@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 usage 'push'
 aliases :gh, :'gh-pages'
 summary 'deploy to github pages'

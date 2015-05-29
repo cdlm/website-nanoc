@@ -1,5 +1,3 @@
-# -*- encoding : utf-8 -*-
-
 def img(item=nil, attributes={})
   # see Nanoc::Helpers::LinkTo#link_to
   if item.nil?

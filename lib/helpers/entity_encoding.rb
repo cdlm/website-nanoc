@@ -1,5 +1,3 @@
-# -*- encoding : utf-8 -*-
-
 # Shamelessly copied from Nanoc's HTMLEscape
 module EntityEncoding
 

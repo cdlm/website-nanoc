@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 module Capturing
 
   include Nanoc::Helpers::Capturing

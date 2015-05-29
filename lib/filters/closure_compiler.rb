@@ -1,5 +1,3 @@
-# -*- encoding : utf-8 -*-
-
 class ClosureCompiler < Nanoc::Filter
   identifier :closure_compiler
   

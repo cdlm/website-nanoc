@@ -1,5 +1,3 @@
-# -*- encoding : utf-8 -*-
-
 # A deployer that pushes the compiled site using git.
 #
 # The path to the root of the git working directory should be specified in the
