@@ -49,5 +49,5 @@ default_info:
     - /software/index.*
     - /curriculum.*
     - /contact.*
-    # - /notes/index.*
+    - /notes/index.*
 

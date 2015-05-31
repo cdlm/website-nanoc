@@ -8,9 +8,9 @@ header_slogan: >
   <em>random articles not completely unrelated
   to research, objects, programming, and craft.</em>
 header_menu:
-  - /
-  - /notes/archives/
-  - /notes/tags/
+  - /index.*
+  - /notes/archives/index.*
+  - /notes/tags/index.*
 head:
   link:
     - {rel: alternate, type: application/atom+xml, href: /notes/feed.atom, title: Posts (Atom)}
@@ -19,8 +19,8 @@ head:
 
 # <%= @item[:title] %>
 
-<% feed_named('/notes/feed/').entries.last(5).reverse.each do |post| %>
-  <%= render 'article_summary', item: post %>
+<% feed_named('/notes/feed.*').entries.last(5).reverse.each do |post| %>
+  <%= render '/article_summary.*', item: post %>
 <% end %>
 
 

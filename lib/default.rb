@@ -12,7 +12,7 @@ include Nanoc::Helpers::Tagging
 
 # Route by setting the extension
 def extension(ext=nil, opts={})
-  e = ext || item[:extension] || ''
+  e = ext || item.identifier.extension || ''
   item.identifier.with_ext e
 end
 
@@ -31,7 +31,9 @@ end
 # Menu generation
 def menu_items
   info(:header_menu).collect do |id|
-    item_named(id)
+    item = item_named(id)
+    binding.pry if item.nil?
+    item
   end
 end
 

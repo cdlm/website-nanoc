@@ -1,9 +1,9 @@
 module Blogging
 
   # Convenience
-  class Nanoc::MutableItemView
+  class Nanoc::ItemView
     def feed?
-       self[:kind] == 'feed' || self[:extension] == 'feed'
+       self[:kind] == 'feed' || self.identifier.extension == 'feed'
     end
   end
 
@@ -51,7 +51,8 @@ module Blogging
     end
 
     def mtime(items=nil)
-      (items || self.entries).collect{ |e| e[:mtime] }.max
+      # (items || self.entries).collect{ |e| e[:mtime] }.max
+      DateTime.now
     end
 
     def chain_entries
@@ -119,7 +120,6 @@ module Blogging
       attributes = {
         contents: contents,
         mtime: mtime,
-        extension: 'erb',
         is_hidden: true
       }
       options[:attributes].each do |k,v|

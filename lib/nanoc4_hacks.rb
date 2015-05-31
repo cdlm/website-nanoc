@@ -7,3 +7,11 @@ class Nanoc::ItemView
   end
 
 end
+
+class Nanoc::Identifier
+
+  def extension
+    File.extname(@string)
+  end
+
+end

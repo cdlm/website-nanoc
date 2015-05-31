@@ -37,7 +37,7 @@ end
 route '/publications/*.bib', rep: :html do  nil  end # FIXME
 
 # blog articles
-ignore '/notes/**/*'
+# ignore '/notes/**/*'
 compile %r{/notes/\d\d\d\d/.*\.(html|markdown)$/} do
   filter :erb
   filter :kramdown
@@ -53,7 +53,7 @@ end
 
 compile '/**/*.{erb,html,markdown}' do
   filter :erb
-  filter :kramdown unless item[:extension] == 'erb'
+  filter :kramdown unless item.identifier.extension == 'erb'
   filter :rubypants
   layout '/default.*'
   filter :relativize_paths, type: :html

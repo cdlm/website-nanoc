@@ -8,18 +8,18 @@ entries_pattern: /notes/[0-9][0-9][0-9][0-9]/[^/]+/
 entries_info: # merged into metadata of entries
   tag_base_url: /notes/tags/#
 archives:
-  identifier: /notes/archives/
+  identifier: /notes/archives/index.erb
   layout: /articles_by_year.*
   attributes:
     title: Yearly archives
     menu_title: Archives
 archives_yearly:
-  identifier: /notes/%{single_year}/
+  identifier: /notes/%{single_year}.erb
   layout: /articles_by_year.*
   attributes:
     title: Posted in %{single_year}
 tags:
-  identifier: /notes/tags/
+  identifier: /notes/tags/index.erb
   layout: /articles_by_tag.*
   attributes:
     title: Tags
