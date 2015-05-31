@@ -40,9 +40,9 @@ module Blogging
     def entries
       return @entries unless @entries.nil?
 
-      pattern = /^#{ @root[:entries_pattern] }$/
-      @entries = @site_items.select { |i| pattern =~ i.identifier }
-      @entries.sort_by! { |i| i[:created_at] || raise(RuntimeError, i.identifier) }
+      @entries = @site_items.find_all(@root[:entries_pattern])
+      @entries.reject! { |i| i[:is_generated] }
+      @entries.sort_by! { |i| i[:created_at] || raise(RuntimeError, "Item #{i.identifier} is missing mandatory attribute created_at") }
       return @entries
     end
 
@@ -119,6 +119,7 @@ module Blogging
       attributes = {
         contents: contents,
         mtime: mtime,
+        is_generated: true,
         is_hidden: true
       }
       options[:attributes].each do |k,v|
