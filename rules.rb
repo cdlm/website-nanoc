@@ -51,6 +51,10 @@ compile '/**/*.sass' do
   filter :relativize_paths, type: :css
 end
 
+route '/**/*.sass' do
+  extension 'css'
+end
+
 compile '/**/*.{erb,html,markdown}' do
   filter :erb
   filter :kramdown unless item.identifier.extension == 'erb'
@@ -59,9 +63,17 @@ compile '/**/*.{erb,html,markdown}' do
   filter :relativize_paths, type: :html
 end
 
+route '/**/*.{erb,html,markdown}' do
+  extension 'html', as_index: true
+end
+
 compile '/**/*.{feed,xml}' do
   filter :erb
   # filter :relativize_paths, type: :xml
+end
+
+route '/**/*.feed' do
+  extension 'xml'
 end
 
 # default pipeline & routing
@@ -71,14 +83,5 @@ compile '/**/*' do
 end
 
 route '/**/*' do
-  case item[:extension]
-  when 'sass'
-    extension 'css'
-  when 'erb', 'html', 'markdown'
-    extension 'html', as_index: true
-  when 'feed'
-    extension 'xml'
-  else
-    extension
-  end
+  extension
 end
