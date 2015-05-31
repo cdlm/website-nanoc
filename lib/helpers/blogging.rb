@@ -51,8 +51,7 @@ module Blogging
     end
 
     def mtime(items=nil)
-      # (items || self.entries).collect{ |e| e[:mtime] }.max
-      DateTime.now
+      (items || self.entries).collect{ |e| e[:mtime] }.max
     end
 
     def chain_entries
