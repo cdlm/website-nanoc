@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/nanoc/nanoc.git
+  revision: 917d05f2d4abd41d5f352cc4fe11f5ca238e6c47
+  specs:
+    nanoc (4.0.0b3)
+      cri (~> 2.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -43,8 +50,6 @@ GEM
     lumberjack (1.0.9)
     method_source (0.8.2)
     mini_portile (0.6.2)
-    nanoc (4.0.0b3)
-      cri (~> 2.3)
     nenv (0.2.0)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
@@ -90,7 +95,7 @@ DEPENDENCIES
   guard-nanoc
   haml
   kramdown
-  nanoc (~> 4.0.0b2)
+  nanoc!
   nokogiri
   pry
   pry-byebug
