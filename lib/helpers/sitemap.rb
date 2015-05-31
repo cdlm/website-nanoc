@@ -10,7 +10,7 @@ end
 def create_sitemap
   @items.create(
     "<%= xml_sitemap %>",
-    { :extension => 'xml', :is_hidden => true },
-    '/sitemap/'
+    { :is_hidden => true },
+    '/sitemap.xml'
   )
 end

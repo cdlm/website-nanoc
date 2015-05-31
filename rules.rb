@@ -15,7 +15,7 @@ preprocess do
     when /404|500|htaccess/, %r{/(scripts|stylesheets)/.*}
       true
     else
-      item.binary? || @config[:hidden_extensions].include?(item[:extension])
+      item.binary? || @config[:hidden_extensions].include?(item.identifier.ext)
     end
   end
   create_sitemap
@@ -57,7 +57,7 @@ end
 
 compile '/**/*.{erb,html,markdown}' do
   filter :erb
-  filter :kramdown unless item.identifier.extension == 'erb'
+  filter :kramdown unless item.identifier.ext == 'erb'
   filter :rubypants
   layout '/default.*'
   filter :relativize_paths, type: :html

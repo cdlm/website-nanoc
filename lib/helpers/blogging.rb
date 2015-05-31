@@ -3,7 +3,7 @@ module Blogging
   # Convenience
   class Nanoc::ItemView
     def feed?
-       self[:kind] == 'feed' || self.identifier.extension == 'feed'
+       self[:kind] == 'feed' || self.identifier.ext == 'feed'
     end
   end
 
