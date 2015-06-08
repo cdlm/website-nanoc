@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/nanoc/nanoc.git
-  revision: 917d05f2d4abd41d5f352cc4fe11f5ca238e6c47
+  revision: 5231a7247477b64e46338229307bf846d1f374ac
   specs:
-    nanoc (4.0.0b3)
+    nanoc (4.0.0b4)
       cri (~> 2.3)
 
 GEM
@@ -10,6 +10,8 @@ GEM
   specs:
     adsf (1.2.0)
       rack (>= 1.0.0)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     builder (3.2.2)
     byebug (4.0.5)
       columnize (= 0.9.0)
@@ -22,6 +24,7 @@ GEM
     cri (2.7.0)
       colored (~> 1.2)
     daemons (1.2.2)
+    debug_inspector (0.0.2)
     eventmachine (1.0.7)
     ffi (1.9.8)
     formatador (0.2.5)
@@ -41,7 +44,8 @@ GEM
     haml (4.0.6)
       tilt
     hitimes (1.2.2)
-    json (1.8.2)
+    interception (0.5)
+    json (1.8.3)
     kramdown (1.7.0)
     listen (2.10.0)
       celluloid (~> 0.16.0)
@@ -63,6 +67,12 @@ GEM
     pry-byebug (3.1.0)
       byebug (~> 4.0)
       pry (~> 0.10)
+    pry-rescue (1.4.2)
+      interception (>= 0.5)
+      pry
+    pry-stack_explorer (0.4.9.2)
+      binding_of_caller (>= 0.7)
+      pry (>= 0.9.11)
     rack (1.6.1)
     rb-fsevent (0.9.5)
     rb-inotify (0.9.5)
@@ -99,6 +109,8 @@ DEPENDENCIES
   nokogiri
   pry
   pry-byebug
+  pry-rescue
+  pry-stack_explorer
   rubypants
   sass
   systemu
@@ -106,4 +118,4 @@ DEPENDENCIES
   w3c_validators
 
 BUNDLED WITH
-   1.10.2
+   1.10.3
