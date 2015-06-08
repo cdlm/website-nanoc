@@ -21,8 +21,8 @@ preprocess do
   create_sitemap
 end
 
-layout '/**/*', :by_extension,
-  haml: { format: :xhtml, ugly: true }
+layout '/**/*.haml', :haml, format: :xhtml, ugly: true
+layout '/**/*', :erb
 
 # do not generate partials, Sass includes, etc
 ignore %r{/(_|README)}
