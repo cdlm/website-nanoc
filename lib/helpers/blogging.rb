@@ -1,14 +1,7 @@
 module Blogging
 
-  # Convenience
-  module Nanoc
-    class ItemView
-
-      def feed?
-        self[:kind] == 'feed' || identifier.ext == 'feed'
-      end
-
-    end
+  def feed?(item)
+    item[:kind] == 'feed' || item.identifier.ext == 'feed'
   end
 
   ## Content helpers
@@ -21,13 +14,13 @@ module Blogging
   def all_feeds
     Enumerator.new do |feeds|
       @items.each do |i|
-        feeds << Feed.new(@items, i) if i.feed?
+        feeds << Feed.new(@items, i) if feed?(i)
       end
     end
   end
 
   def feed_named(id)
-    item = @items[id] and item.feed? or return nil # rubocop:disable AndOr
+    item = @items[id] and feed?(item) or return nil # rubocop:disable AndOr
     Feed.new(@items, item)
   end
 
