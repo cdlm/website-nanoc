@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'nanoc', github: 'nanoc/nanoc'
-gem 'guard-nanoc'
+gem 'guard-nanoc', github: 'guard/guard-nanoc'
 gem 'adsf' # nanoc view
 gem 'thin'
 gem 'systemu' # nanoc deploy
