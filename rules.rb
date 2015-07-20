@@ -1,3 +1,5 @@
+# rubocop:disable AlignParameters, BlockDelimiters, EmptyLinesAroundBlockBody
+
 preprocess do
 
   # setup blog items
@@ -30,7 +32,7 @@ ignore %r{/(_|README)}
 # publications list from bibliography
 compile '/publications/*.bib', rep: :html do
   filter :external,
-    cmd: [ 'bibhtmlize/bibhtmlize', item[:content_filename] ],
+    cmd: ['bibhtmlize/bibhtmlize', item[:content_filename]],
     pipe_content: false
 end
 
@@ -78,7 +80,8 @@ end
 
 # default pipeline & routing
 compile '/**/*' do
-  # TODO *.bib: filter out the BibDesk noise
+  # TODO: unhandled extensions
+  # *.bib: filter out the BibDesk noise
   # *.js: filter :closure_compiler
 end
 

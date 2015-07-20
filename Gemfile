@@ -21,6 +21,7 @@ gem 'sass'
 gem 'git' # deploy
 
 group :development do
+  gem 'rubocop'
   gem 'pry'
   gem 'pry-byebug'
   gem 'pry-rescue'
