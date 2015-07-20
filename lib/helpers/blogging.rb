@@ -1,16 +1,20 @@
 module Blogging
 
   # Convenience
-  class Nanoc::ItemView
-    def feed?
-       self[:kind] == 'feed' || self.identifier.ext == 'feed'
+  module Nanoc
+    class ItemView
+
+      def feed?
+        self[:kind] == 'feed' || identifier.ext == 'feed'
+      end
+
     end
   end
 
   ## Content helpers
 
   def article_image(item)
-    image_id = item[:image] and item_named image_id
+    image_id = item[:image] and item_named image_id # rubocop:disable AndOr
   end
 
   ## Preprocessing stage
@@ -23,7 +27,7 @@ module Blogging
   end
 
   def feed_named(id)
-    item = @items[id] and item.feed? or return nil
+    item = @items[id] and item.feed? or return nil # rubocop:disable AndOr
     Feed.new(@items, item)
   end
 
@@ -34,7 +38,7 @@ module Blogging
       @site_items = site_items
       @root = root
       @entries = nil
-      # TODO validate root
+      # TODO: validate root
     end
 
     def entries
@@ -42,16 +46,19 @@ module Blogging
 
       @entries = @site_items.find_all(@root[:entries_pattern])
       @entries.reject! { |i| i[:is_generated] }
-      @entries.sort_by! { |i| i[:created_at] || raise(RuntimeError, "Item #{i.identifier} is missing mandatory attribute created_at") }
-      return @entries
+      @entries.sort_by! do |i|
+        i[:created_at] ||
+          fail("Item #{i.identifier} is missing mandatory attribute created_at")
+      end
+      @entries
     end
 
     def entries_by_year
-      classified_entries{ |e| e[:created_at].year.to_s }
+      classified_entries { |e| e[:created_at].year.to_s }
     end
 
-    def mtime(items=nil)
-      (items || self.entries).collect{ |e| e[:mtime] }.max
+    def mtime(items = nil)
+      (items || entries).collect { |e| e[:mtime] }.max
     end
 
     def chain_entries
@@ -88,41 +95,43 @@ module Blogging
     def create_yearly_archive_items
       years = entries_by_year
       years.each do |y, es|
-        create_classification_item({y => es}, mtime(es), @root[:archives_yearly], single_year: y)
+        create_classification_item(
+          { y => es }, mtime(es),
+          @root[:archives_yearly],
+          single_year: y)
       end
     end
 
     def create_tag_item
-      contents, unsorted_tags = {}, classified_entries{ |e| e[:tags] }
+      contents = {}
+      unsorted_tags = classified_entries { |e| e[:tags] }
       unsorted_tags.keys.sort.each do |t|
         contents[t] = unsorted_tags[t]
       end
       create_classification_item(contents, mtime, @root[:tags])
     end
 
-    def classified_entries(reverse=true, &block)
-      result = Hash.new
+    def classified_entries(reverse = true, &_)
+      result = {}
       (reverse ? entries.reverse : entries).each do |i|
         key = yield i
         if key.is_a? Array
-          key.each do |k|
-            (result[k] ||= []) << i
-          end
+          key.each do |k| (result[k] ||= []) << i end
         else
           (result[key] ||= []) << i
         end
       end
-      return result
+      result
     end
 
-    def create_classification_item(contents, mtime, options, args={})
+    def create_classification_item(contents, mtime, options, args = {})
       attributes = {
         contents: contents,
         mtime: mtime,
         is_generated: true,
         is_hidden: true
       }
-      options[:attributes].each do |k,v|
+      options[:attributes].each do |k, v|
         attributes[k] = v % args
       end
 

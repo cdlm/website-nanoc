@@ -1,0 +1,8 @@
+Style/EmptyLines:
+  Enabled: false
+
+Style/EmptyLinesAroundClassBody:
+  EnforcedStyle: empty_lines
+
+Style/BlockDelimiters:
+  EnforcedStyle: semantic
