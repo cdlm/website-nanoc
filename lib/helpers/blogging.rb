@@ -20,7 +20,7 @@ module Blogging
   end
 
   def feed_named(id)
-    item = @items[id] and feed?(item) or return nil # rubocop:disable AndOr
+    item = @items[id] and feed?(item) or fail("No feed at #{id}") # rubocop:disable AndOr
     Feed.new(@items, item)
   end
 
@@ -37,29 +37,30 @@ module Blogging
     def entries
       return @entries unless @entries.nil?
 
-      @entries = @site_items.find_all(@root[:entries_pattern])
-      @entries.reject! { |i| i[:is_generated] }
-      @entries.sort_by! do |i|
-        i[:created_at] ||
-          fail("Item #{i.identifier} is missing mandatory attribute created_at")
-      end
-      @entries
+      @entries = @site_items
+        .find_all(@root[:entries_pattern])
+        .reject { |i| i[:is_generated] }
+        .sort_by { |i|
+          i[:created_at] || fail("Item #{i.identifier}" \
+            ' is missing mandatory attribute created_at')
+        }
     end
 
     def entries_by_year
-      classified_entries { |e| e[:created_at].year.to_s }
+      classified_entries { |e| [e[:created_at].year] }
     end
 
-    def mtime(items = nil)
-      (items || entries).collect { |e| e[:mtime] }.max
+    def mtime(ids = nil)
+      specific_items = ids.nil? ? entries : ids.map { |id| @site_items[id] }
+      specific_items.collect { |e| e[:mtime] }.max
     end
 
     def chain_entries
       prev = nil
       entries.each do |current|
         unless prev.nil?
-          prev[:next] = current.identifier
-          current[:prev] = prev.identifier
+          prev[:next] = current.identifier.to_s
+          current[:prev] = prev.identifier.to_s
         end
         prev = current
       end
@@ -87,11 +88,11 @@ module Blogging
 
     def create_yearly_archive_items
       years = entries_by_year
-      years.each do |y, es|
+      years.each do |year, entries|
         create_classification_item(
-          { y => es }, mtime(es),
+          { year => entries }, mtime(entries),
           @root[:archives_yearly],
-          single_year: y)
+          single_year: year)
       end
     end
 
@@ -104,15 +105,12 @@ module Blogging
       create_classification_item(contents, mtime, @root[:tags])
     end
 
-    def classified_entries(reverse = true, &_)
+    def classified_entries(reverse = true)
       result = {}
-      (reverse ? entries.reverse : entries).each do |i|
-        key = yield i
-        if key.is_a? Array
-          key.each do |k| (result[k] ||= []) << i end
-        else
-          (result[key] ||= []) << i
-        end
+      (reverse ? entries.reverse : entries).each do |item|
+        keys = yield item
+        keys = [keys] unless keys.is_a? Array
+        keys.each do |k| (result[k] ||= []) << item.identifier.to_s end
       end
       result
     end

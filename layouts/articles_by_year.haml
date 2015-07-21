@@ -2,7 +2,8 @@
 - @item[:contents].each do |year, posts_that_year|
   - unless @item[:single_year]
     %h3= year
-  - posts_that_year.each do |post|
+  - posts_that_year.each do |post_id|
+    - post = items[post_id]
     .postmeta<
       %span.date= post[:created_at].strftime "%d %b"
     %p= link_to post[:title], post
