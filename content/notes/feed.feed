@@ -26,4 +26,8 @@ tags:
 is_hidden: true
 ---
 <%# atom_feed :limit => 5 %>
+
 <%# vim: set ft=yaml : %>
+<%# Local Variables: %>
+<%# mode: yaml %>
+<%# End: %>
