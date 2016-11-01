@@ -63,6 +63,7 @@ compile '/**/*.{erb,html,markdown}' do
   filter :rubypants
   layout '/default.*'
   filter :relativize_paths, type: :html
+  # filter :html5small
 end
 
 route '/**/*.{erb,html,markdown}' do

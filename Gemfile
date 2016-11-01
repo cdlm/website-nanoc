@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
+git_source(:github){ |repo_name| "https://github.com/#{repo_name}.git" }
 
-gem 'nanoc', github: 'nanoc/nanoc'
-gem 'guard-nanoc', github: 'guard/guard-nanoc'
+gem 'nanoc', '~> 4.3' #, github: 'nanoc/nanoc'
+gem 'guard-nanoc' #, github: 'guard/guard-nanoc'
 gem 'adsf' # nanoc view
 gem 'thin'
 gem 'systemu' # nanoc deploy
@@ -17,6 +18,7 @@ gem 'sass'
 # gem 'compass'
 # gem 'modular-scale'
 # gem 'susy'
+# gem 'html5small'
 
 gem 'git' # deploy
 
