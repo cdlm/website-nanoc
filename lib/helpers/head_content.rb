@@ -1,7 +1,7 @@
 def head_content
   result = ""
   return result unless @item[:head]
-  
+
   @item[:head].each do |elt, elts|
     elts.each do |attrs|
       result << "<#{elt}"
