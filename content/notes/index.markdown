@@ -9,8 +9,8 @@ header_slogan: >
   to research, objects, programming, and craft.</em>
 header_menu:
   - /index.*
-  - /notes/archives/index.*
-  - /notes/tags/index.*
+  - /notes/archives.*
+  - /notes/tags.*
 head:
   link:
     - {rel: alternate, type: application/atom+xml, href: /notes/feed.atom, title: Posts (Atom)}
