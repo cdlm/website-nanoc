@@ -25,7 +25,7 @@ tags:
     title: Tags
 is_hidden: true
 ---
-<%# atom_feed :limit => 5 %>
+<%# atom_feed %>
 
 <%# vim: set ft=yaml : %>
 <%# Local Variables: %>

@@ -13,8 +13,7 @@ header_menu:
   - /index.*
 head:
   link:
-    - {rel: alternate, type: application/atom+xml, href: /notes/feed.atom, title: Posts (Atom)}
-    - {rel: alternate, type: application/rss+xml, href: /notes/feed.rss, title: Posts (RSS)}
+    - {rel: alternate, type: application/atom+xml, href: /notes/feed.xml, title: Posts (Atom)}
 ---
 
 # <%= @item[:title] %>
