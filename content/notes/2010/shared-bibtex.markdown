@@ -1,7 +1,7 @@
 ---
 title: Many LaTeX documents, one BibTeX database
 created_at: 2010-01-13
-image: /notes/images/library/
+image: /notes/images/library.*
 tags: [latex, bibtex]
 ---
 <% excerpt :summary do %>

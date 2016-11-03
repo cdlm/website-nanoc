@@ -1,7 +1,7 @@
 ---
 title: Playing Tenuki (eponym)
 created_at: 2009-12-06
-image: /notes/images/game-of-go/
+image: /notes/images/game-of-go.*
 tags: [blog]
 ---
 <% excerpt :summary do %>

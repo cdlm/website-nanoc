@@ -1,7 +1,7 @@
 ---
 title: A better Qwerty layout for accents
 created_at: 2010-04-17
-image: /notes/images/keyboard/
+image: /notes/images/keyboard.*
 tags: [usability, hack, esperanto]
 ---
 <% excerpt :summary do %>
