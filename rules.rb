@@ -39,8 +39,7 @@ end
 route '/publications/*.bib', rep: :html do  nil  end # FIXME
 
 # blog articles
-# ignore '/notes/**/*'
-compile %r{/notes/\d\d\d\d/.*\.(html|markdown)$/} do
+compile %r{\A/notes/\d{4}/.*\.(html|markdown)\z} do
   filter :erb
   filter :kramdown
   filter :rubypants
