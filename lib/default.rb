@@ -24,12 +24,7 @@ end
 
 # Menu generation
 def menu_items
-  binding.pry if /citezen/ === item.identifier
-  info(:header_menu).collect do |id|
-    item = item_named(id)
-    binding.pry if item.nil?
-    item
-  end
+  info(:header_menu).collect { |id| item_named(id) }
 end
 
 def menu_link(item)
@@ -39,7 +34,6 @@ end
 
 def ancestor_link_unless_current(title, destination)
   attributes = {}
-  # binding.pry
   if not root?(destination) and ancestors?(destination, @item)
     attributes.update :class => 'active'
   end
