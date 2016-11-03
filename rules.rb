@@ -29,14 +29,20 @@ layout '/**/*', :erb
 # do not generate partials, Sass includes, etc
 ignore %r{/(_|README)}
 
+compile '/**/*.sass' do
+  filter :sass, style: :compact
+  filter :relativize_paths, type: :css
+
+  write extension('css')
+end
+
 # publications list from bibliography
 compile '/publications/*.bib', rep: :html do
   filter :external,
     cmd: ['bibhtmlize/bibhtmlize', item[:content_filename]],
     pipe_content: false
+  write nil
 end
-
-route '/publications/*.bib', rep: :html do  nil  end # FIXME
 
 # blog articles
 compile %r{\A/notes/\d{4}/.*\.(html|markdown)\z} do
@@ -45,15 +51,6 @@ compile %r{\A/notes/\d{4}/.*\.(html|markdown)\z} do
   filter :rubypants
   layout '/article.*'
   filter :relativize_paths, type: :html
-end
-
-compile '/**/*.sass' do
-  filter :sass, style: :compact
-  filter :relativize_paths, type: :css
-end
-
-route '/**/*.sass' do
-  extension 'css'
 end
 
 compile '/**/*.{erb,html,markdown}' do
