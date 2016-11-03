@@ -8,9 +8,9 @@ header_slogan: >
   <em>random articles not completely unrelated
   to research, objects, programming, and craft.</em>
 header_menu:
-  - /index.*
   - /notes/archives.*
   - /notes/tags.*
+  - /index.*
 head:
   link:
     - {rel: alternate, type: application/atom+xml, href: /notes/feed.atom, title: Posts (Atom)}

@@ -75,4 +75,4 @@ def ancestors?(possible_ancestor, item)
   ancestors?(possible_ancestor, parent)
 end
 
-def root?(item)  item.identifier == '/'  end
+def root?(item)  item.identifier =~ '/index.*'  end
