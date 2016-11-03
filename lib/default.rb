@@ -14,10 +14,10 @@ include Nanoc::Helpers::Tagging
 
 
 # Route by setting the extension
-def extension(ext=nil, opts={})
+def extension(ext = nil, opts = {})
   e = ext || item.identifier.ext || ''
   i = item.identifier.without_ext
-  i = i.sub(/(\/index)?\z/, '/index') if opts[:as_index]
+  i = i.sub(%r{(/index)?\z}, '/index') if opts[:as_index]
   i += ".#{e}" unless e.empty?
   i
 end
@@ -33,22 +33,19 @@ def menu_link(item)
 end
 
 def ancestor_link_unless_current(title, destination)
-  attributes = {}
-  if not root?(destination) and ancestors?(destination, @item)
-    attributes.update :class => 'active'
+  attributes = { title: destination[:title] }
+  if !root?(destination) && ancestors?(destination, @item)
+    attributes[:class] = 'active'
   end
-  if destination != @item
-    attributes.update :href => (relative_path_to destination)
-    elt = 'a'
+  if destination == @item
+    elt = :span
+    attributes[:title] = 'You are here'
   else
-    attributes.update :title => "You're here"
-    elt = 'span'
+    elt = :a
+    attributes[:href] = (relative_path_to destination)
   end
-  result = "<#{elt}"
-  attributes.each do |k,v|
-    result << " #{k}=\"#{html_escape v}\""
-  end
-  result << ">#{title}</#{elt}>"
+  attrs = attributes.collect { |k, v| " #{k}=\"#{html_escape v}\"" }.join
+  "<#{elt}#{attrs}>#{title}</#{elt}>"
 end
 
 def item_named(id)
@@ -56,7 +53,7 @@ def item_named(id)
 end
 
 def items_by_identifier(pattern)
-  items.select { |i| pattern === i.identifier }
+  items.select { |i| i.identifier =~ pattern }
 end
 
 # Item hierarchy
@@ -69,4 +66,6 @@ def ancestors?(possible_ancestor, item)
   ancestors?(possible_ancestor, parent)
 end
 
-def root?(item)  item.identifier =~ '/index.*'  end
+def root?(item)
+  item.identifier =~ '/index.*'
+end
