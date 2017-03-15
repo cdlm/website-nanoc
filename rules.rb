@@ -41,7 +41,6 @@ compile '/publications/*.bib', rep: :html do
   filter :external,
     cmd: ['bibhtmlize/bibhtmlize', item[:content_filename]],
     pipe_content: false
-  write nil
 end
 
 # blog articles
